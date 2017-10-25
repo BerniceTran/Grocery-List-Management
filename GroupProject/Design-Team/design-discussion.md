@@ -49,4 +49,5 @@
 
 **Conclusions:**
 
-1.
+1. To say the least, I learned how to use markdown language! -Naz
+2. [List thoughts and note your name down (if you'd like) here please!]
