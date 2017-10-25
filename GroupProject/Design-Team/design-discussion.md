@@ -1,48 +1,52 @@
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-| Section 1: Individual Designs |
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Design 1:
-	//Insert embedded design here
-	-Pros
-		>
-	-Cons
-		>
+## Section 1: Individual Designs
 
-Design 2:
-	//Insert embedded design here
-	-Pros
-		>
-	-Cons
-		>
+[design1]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design-Individual/DefinitelyNotSona/GroceryListUMLNaz.PNG?raw=true "Grocery List Design - Nazib Mondal"
 
-Design 3:
-	//Insert embedded design here
-	-Pros
-		>
-	-Cons
-		>
-Design 4:
-	//Insert embedded design here
-	-Pros
-		>
-	-Cons
-		>
+**Design 1:**
+	![alt text][design1]
+
+	Pros:
+		1. [List Pros Here]		
+	Cons:
+		1. [List Cons here]
+---
+**Design 2:**
+
+	Pros:
+		1. [List Pros Here]		
+	Cons:
+		1. [List Cons here]
+---
+**Design 3:**
+
+	Pros:
+		1. [List Pros Here]		
+	Cons:
+		1. [List Cons here]
+---
+**Design 4:**
+
+	Pros:
+		1. [List Pros Here]		
+	Cons:
+		1. [List Cons here]
+
+---
+## Section 2: Team Design
+
+**Completed Design:**
+
+	Commonalities:
+		1. [List Commonalities Here]
+	Differences:
+		1. [List Differences Here]
+	Other Notes:
+		1. [List Notes Here]
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-| Section 2: Team Design |
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-Completed Design:
-	//Insert Embedded Image here
-	-Commonalities
-		>
-	-Differences
-		>
-	-Other Notes
-		>
+---
+## Section 3: Summaries
 
+**Conclusions:**
 
-~~~~~~~~~~~~~~~~~~~~~~~~
-| Section 3: Summaries |
-~~~~~~~~~~~~~~~~~~~~~~~~
-
+1.
