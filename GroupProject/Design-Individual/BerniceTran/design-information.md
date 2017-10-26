@@ -1,0 +1,11 @@
+1. To realize this requirement, I added the design class **GroceryList** that will contain a list of items represented by the attribute, **List&lt;GroceryListEntry&gt;**. The class will also have operations **addItem()**, which adds items to a list, and **deleteItem()**, which deletes items from a list. To change the quantity of items of a list, the **changeQuantity()** operation was added to the **GroceryListEntry** class as this class is in charge of operations relating to the item. 
+2. Two classes were created to the represent the database of items and corresponding item types: **GroceryItem** class with attributes **name** and corresponding **type** that has a foreign key to **name** in **GroceryType** class. 
+3. To realize this requirement, I added the design class **Search** that will contain the attribute **List&lt;itemType&gt;** and the operation **getItemType()**.
+4. The **Search** class will be used to return a list of grocery items, **List&lt;groceryItems&gt;**, with similar names using the operations **getItemByName()**. If a match is found, the **getItemByItemType()** operation is called.
+5. This is not considered because it does not affect the design directly.
+6. To check off items in a list, I added the operation **check()** to the **GroceryListEntry** class.
+7. To clear all check-off marks in a list at once, I added the operation **uncheck()** to the **GroceryList** class.
+8. This is not considered because it does not affect the design directly.
+9. In the **GroceryList**, I added the operation **sortByType()** to sort **List&lt;GroceryListEntry&gt;** which will reference **GroceryItem** type.
+10. A **ListManagement** class was created with operations **createList()** to create a **GroceryList**, **renameList()** to (re)name list, **selectList()** to select list, and **deleteList()** to delete list. The **GroceryListType** class was created and the operation **setListType()** operation was added to the class **GroceryList** to support multiple lists at a time. 
+11. This is not considered because it does not affect the design directly.
