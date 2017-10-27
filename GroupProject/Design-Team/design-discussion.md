@@ -16,10 +16,12 @@
 	![alt text][design2]
 
 	Pros:
-		1.  
-		2. 		
+		1. Components broken down well; I like the way GroceryItem/Type are related to the database Search class -Naz
+		2. Includes possible classes that MIGHT be necessary despite not being mentioned in the spec (such as GLType, and a ListManagement Class) -Naz
+		3. [List Pros Here]
 	Cons:
-		1. [List Cons here]
+		1. Not sure how necessary the extra classes are, for example GLType - can that not be an attribute for the GroceryList class? -Naz
+		2. [List Cons Here]
 ---
 **Design 3:**
 
