@@ -23,12 +23,15 @@
 		1. Not sure how necessary the extra classes are, for example GLType - can that not be an attribute for the GroceryList class? -Naz
 		2. [List Cons Here]
 ---
-**Design 3: Jooyong "Dnaiel" Park**
+**Design 3: Jooyong "Daniel" Park**
 
 	Pros:
-		1. [List Pros Here]		
+		1. I really like the way your design is structured in a sort of top -> down style, it makes reading and following the connections easier -Naz
+		2. Also like the way features are broken down, similarly to Bernice's where the Monthly/Weekly list features are separate -Naz
+		3. [List Pros Here]
 	Cons:
-		1. [List Cons here]
+		1. I'm not sure how the user is tied to everything in this design, are we saying the User is not the one with the ability to Change/Add/Delete what's in the List? -Naz
+		2. [List Cons Here]
 ---
 **Design 4: Ricardo Delahoz**
 
