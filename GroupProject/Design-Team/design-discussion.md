@@ -1,9 +1,9 @@
 ## Section 1: Individual Designs
 
-[design1]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design-Individual/DefinitelyNotSona/GroceryListUMLNaz.PNG?raw=true "Grocery List Design - Nazib Mondal"
-[design2]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design-Individual/BerniceTran/GroceryListManager.png
+[design1]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design-Individual/DefinitelyNotSona/GroceryListUMLNaz.PNG?raw=true "Grocery List Design 1 - Nazib Mondal"
+[design2]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design-Individual/BerniceTran/GroceryListManager.png "Grocery List Design 2 - Bernice Tran"
 
-**Design 1:**
+**Design 1: Nazib Mondal**
 	![alt text][design1]
 
 	Pros:
@@ -12,11 +12,12 @@
 		1. [List Cons here]
 ---
 
-**Design 2:**
+**Design 2: Bernice Tran**
 	![alt text][design2]
 
 	Pros:
-		1. [List Pros Here]		
+		1.  
+		2. 		
 	Cons:
 		1. [List Cons here]
 ---
