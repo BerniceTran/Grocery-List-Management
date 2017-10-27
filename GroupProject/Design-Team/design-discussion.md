@@ -23,14 +23,14 @@
 		1. Not sure how necessary the extra classes are, for example GLType - can that not be an attribute for the GroceryList class? -Naz
 		2. [List Cons Here]
 ---
-**Design 3:**
+**Design 3: Jooyong "Dnaiel" Park**
 
 	Pros:
 		1. [List Pros Here]		
 	Cons:
 		1. [List Cons here]
 ---
-**Design 4:**
+**Design 4: Ricardo Delahoz**
 
 	Pros:
 		1. [List Pros Here]		
