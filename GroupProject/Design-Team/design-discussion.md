@@ -42,6 +42,7 @@ https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design
 ---
 **Design 4: Ricardo Delahoz**
 	![alt text][design4]
+	
 	Pros:
 		1. Components are broken down neatly with each class having understandable attributes and methods -Naz
 		2. Also takes into account possible things that are not in the specs like GroceryStore (which might also be treated as a con) -Naz 
