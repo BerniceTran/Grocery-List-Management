@@ -11,7 +11,7 @@ https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design
 	Pros:
 		1. The placement and orginization of operations and attributes are well done and concise, with the exception of some (mentioned in cons). As a result, it is clear what each class does. - Ricardo
 		2. Very neat, easy to read, and I like the customer class that goes above and beyond the assignment's description. -Daniel	
-		3. [List Pros here]	
+		3. The classes are clear and concise; clearly shows the relationship between each class, like how a Customer can make a GroceryList which consists of Item(s) from a Database -Bernice	
 	Cons:
 		1. I am not sure if I'm corrected but I do believe some of the operations should have been made into associations class. For instance, I don't think a GroceryList should be saved to itself but instead to each user. Therefore, I think there should be an association class between a User and GroceryList that takes care of that. - Ricardo
 		2. How come some of your relationships have 2 conflicting cardinalities? Reading it, I can justify it, but is it allowed? -Daniel
@@ -29,7 +29,6 @@ https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design
 		2. Includes possible classes that MIGHT be necessary despite not being mentioned in the spec (such as GLType, and a ListManagement Class) -Naz
 		3. Found the generalization of GroceryList helpful, as Monthly and Weekly lists are truly two different kinds of list. - Ricardo
 		4. Similar to #2, I like how thought through this design is with GroceryListEntry being a separate class, and a ListManagement class I had never thought of. -Daniel
-
 	Cons:
 		1. Not sure how necessary the extra classes are, for example GLType - can that not be an attribute for the GroceryList class? -Naz
 		2. I do, however, think that SearchGroceryList should be an association relation rather than a binary one. I also think that if we're going to have GroceryListType be it's own class it should extend GroceryList. - Ricardo
@@ -43,11 +42,12 @@ https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design
 		1. I really like the way your design is structured in a sort of top -> down style, it makes reading and following the connections easier -Naz
 		2. Also like the way features are broken down, similarly to Bernice's where the Monthly/Weekly list features are separate -Naz
 		3. Found the generalization of GroceryList helpful, as Monthly and Weekly lists are truly two different kinds of list. - Ricardo
-		4. [List Pros Here]
+		4. I like how the association classes connected the Grocery List class and the Item Database class. The functions in them are clear. -Bernice
 	Cons:
 		1. I'm not sure how the user is tied to everything in this design, are we saying the User is not the one with the ability to Change/Add/Delete what's in the List? -Naz
 		2. I also think there should be a User class as the Customer is surely an object. This should also grant them access to operation being performed on the list. - Ricardo
-		3. [List Cons Here]
+		3. I’m not sure if the createList(), renameList(), selectList(), and deleteList() should be in the Grocery List class itself. For example, if an instance of Grocery List is created, should it have the ability to create a new list? -Bernice
+		4. I’m not sure if the more intuitive functions in Item Database like askUserToAddToList() should be added to database itself because it is just a collection of items and its corresponding item types. -Bernice
 ---
 **Design 4: Ricardo Delahoz**
 	![alt text][design4]
