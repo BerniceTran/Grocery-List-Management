@@ -36,9 +36,11 @@
 **Design 4: Ricardo Delahoz**
 
 	Pros:
-		1. [List Pros Here]		
+		1. Components are broken down neatly with each class having understandable attributes and methods -Naz
+		2. Also takes into account possible things that are not in the specs like GroceryStore (which might also be treated as a con) -Naz 
 	Cons:
-		1. [List Cons here]
+		1. I might be misinterpreting some stuff here, namely the necessity of the GroceryStore class - this wasn't mentioned in the specs, unless we're treating this as the Database. It makes logical sense, but do you guys think this is necessary for the design? -Naz
+		2. I'm also not sure about the Address class either, if we take out the GroceryStore class then this would likely go away as well; likewise, is it necessary to have User and Customer as separate classes? What other users would there be? Let's talk about this more later -Naz
 
 ---
 ## Section 2: Team Design
