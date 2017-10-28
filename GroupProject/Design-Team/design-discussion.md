@@ -2,6 +2,7 @@
 
 [design1]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design-Individual/DefinitelyNotSona/GroceryListUMLNaz.PNG?raw=true "Grocery List Design 1 - Nazib Mondal"
 [design2]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design-Individual/BerniceTran/GroceryListManager.png "Grocery List Design 2 - Bernice Tran"
+Design 3 - Daniel Park
 [design4]:
 https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design-Individual/delahozric/design.jpg "Grocery List Design 4 - Ricardo Delahoz"
 **Design 1: Nazib Mondal**
@@ -9,10 +10,15 @@ https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design
 
 	Pros:
 		1. The placement and orginization of operations and attributes are well done and concise, with the exception of some (mentioned in cons). As a result, it is clear what each class does. - Ricardo
-		2. [List Pros here]	
+		2. Very neat, easy to read, and I like the customer class that goes above and beyond the assignment's description. -Daniel	
+		3. [List Pros here]	
 	Cons:
 		1. I am not sure if I'm corrected but I do believe some of the operations should have been made into associations class. For instance, I don't think a GroceryList should be saved to itself but instead to each user. Therefore, I think there should be an association class between a User and GroceryList that takes care of that. - Ricardo
-		2. [List Cons here]
+		2. How come some of your relationships have 2 conflicting cardinalities? Reading it, I can justify it, but is it allowed? -Daniel
+		3. What are the differences between your + and - attributes/functions? -Daniel
+		4. There should be a grocery list type since it was explicitly mentioned in the assignment, right? -Daniel
+	
+		5. [List Cons here]
 ---
 
 **Design 2: Bernice Tran**
@@ -22,11 +28,14 @@ https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design
 		1. Components broken down well; I like the way GroceryItem/Type are related to the database Search class -Naz
 		2. Includes possible classes that MIGHT be necessary despite not being mentioned in the spec (such as GLType, and a ListManagement Class) -Naz
 		3. Found the generalization of GroceryList helpful, as Monthly and Weekly lists are truly two different kinds of list. - Ricardo
-		4. [List Pros Here]
+		4. Similar to #2, I like how thought through this design is with GroceryListEntry being a separate class, and a ListManagement class I had never thought of. -Daniel
+
 	Cons:
 		1. Not sure how necessary the extra classes are, for example GLType - can that not be an attribute for the GroceryList class? -Naz
 		2. I do, however, think that SearchGroceryList should be an association relation rather than a binary one. I also think that if we're going to have GroceryListType be it's own class it should extend GroceryList. - Ricardo
-		3. [List Cons Here]
+		3. Does GroceryListType have to be its own separate thing considering it only has 1 attribute (name)? Similar thoughts for Grocery Type. - Daniel
+		4. Your relationships are missing cardinalities. -Daniel
+
 ---
 **Design 3: Jooyong "Daniel" Park**
 
@@ -46,9 +55,13 @@ https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design
 	Pros:
 		1. Components are broken down neatly with each class having understandable attributes and methods -Naz
 		2. Also takes into account possible things that are not in the specs like GroceryStore (which might also be treated as a con) -Naz 
+		3. This UML seems the most relevant for an actual Android app. It has basic things I missed like customer email address and every object/table has a primary key. -Daniel
+		
 	Cons:
 		1. I might be misinterpreting some stuff here, namely the necessity of the GroceryStore class - this wasn't mentioned in the specs, unless we're treating this as the Database. It makes logical sense, but do you guys think this is necessary for the design? -Naz
 		2. I'm also not sure about the Address class either, if we take out the GroceryStore class then this would likely go away as well; likewise, is it necessary to have User and Customer as separate classes? What other users would there be? Let's talk about this more later -Naz
+		3. Building off of what Naz said, I'm not completely sure about GroceryStore either because it was missing from the assignment. If this is going to be a legit app, we probably do need it and its associated Address class.  -Daniel
+		4. Why is the GroupByType broken out on its own? -Daniel
 
 ---
 ## Section 2: Team Design
@@ -56,7 +69,7 @@ https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design
 **Completed Design:**
 
 	Commonalities:
-		1. [List Commonalities Here]
+		1. Largely, I feel all four of our designs are similar. Are real life UMLs more broken out like Ricardo's or more grouped together like Naz's? -Daniel
 	Differences:
 		1. [List Differences Here]
 	Other Notes:
