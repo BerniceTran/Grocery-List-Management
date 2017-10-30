@@ -4,6 +4,7 @@
 [design2]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design-Individual/BerniceTran/GroceryListManager.png "Grocery List Design 2 - Bernice Tran"
 [design3]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design-Individual/jdapark/design.PNG "Grocery List Design 3 - Jooyong Park"
 [design4]:https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design-Individual/delahozric/design.jpg "Grocery List Design 4 - Ricardo Delahoz"
+[team-design]:https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design-Team/teamDesign.PNG "Team Design"
 
 
 **Design 1: Nazib Mondal**
@@ -11,8 +12,8 @@
 
 	Pros:
 		1. The placement and organization of operations and attributes are well done and concise, with the exception of some (mentioned in cons). As a result, it is clear what each class does. - Ricardo
-		2. Very neat, easy to read, and I like the customer class that goes above and beyond the assignment's description. -Daniel	
-		3. The classes are clear and concise; clearly shows the relationship between each class, like how a Customer can make a GroceryList which consists of Item(s) from a Database. -Bernice	
+		2. Very neat, easy to read, and I like the customer class that goes above and beyond the assignment's description. -Daniel
+		3. The classes are clear and concise; clearly shows the relationship between each class, like how a Customer can make a GroceryList which consists of Item(s) from a Database. -Bernice
 	Cons:
 		1. I am not sure if I'm corrected but I do believe some of the operations should have been made into associations class. For instance, I don't think a GroceryList should be saved to itself but instead to each user. Therefore, I think there should be an association class between a User and GroceryList that takes care of that. - Ricardo
 		2. How come some of your relationships have 2 conflicting cardinalities? Reading it, I can justify it, but is it allowed? -Daniel
@@ -38,7 +39,7 @@
 ---
 **Design 3: Jooyong "Daniel" Park**
 	![alt text][design3]
-	
+
 	Pros:
 		1. I really like the way your design is structured in a sort of top -> down style, it makes reading and following the connections easier -Naz
 		2. Also like the way features are broken down, similarly to Bernice's where the Monthly/Weekly list features are separate -Naz
@@ -52,10 +53,10 @@
 ---
 **Design 4: Ricardo Delahoz**
 	![alt text][design4]
-	
+
 	Pros:
 		1. Components are broken down neatly with each class having understandable attributes and methods -Naz
-		2. Also takes into account possible things that are not in the specs like GroceryStore (which might also be treated as a con) -Naz 
+		2. Also takes into account possible things that are not in the specs like GroceryStore (which might also be treated as a con) -Naz
 		3. This UML seems the most relevant for an actual Android app. It has basic things I missed like customer email address and every object/table has a primary key. -Daniel
 		4. Like #2, it is very detailed like taking into account various things like user and store information, and clearly shows the relationship between classes.
 	Cons:
@@ -69,13 +70,14 @@
 ## Section 2: Team Design
 
 **Completed Design:**
+![alt text][team-design]
 
 	Commonalities:
-		1. Largely, I feel all four of our designs are similar. Are real life UMLs more broken out like Ricardo's or more grouped together like Naz's? -Daniel
+		1. [List Similarities Here]
 	Differences:
 		1. [List Differences Here]
 	Other Notes:
-		1. [List Notes Here]
+		1. Largely, I feel all four of our designs were similar. Are real life UMLs more broken out like Ricardo's or more grouped together like Naz's? -Daniel
 
 
 ---
