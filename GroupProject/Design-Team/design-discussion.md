@@ -84,4 +84,5 @@
 **Conclusions:**
 
 1. To say the least, I learned how to use markdown language! -Naz
-2. [List thoughts and note your name down (if you'd like) here please!]
+2. When discussing changes, we found it very helpful to go back to the source documents (assignment specs, class notes, videos) to decide how to structure the diagram. One big group discussion involved how to handle addItem as that easily could be interpreted as an association class. We referred to the notes on that one and decided to leave it within the GroceryList class. The other big discussion involved how to handle different list types, such as monthly and weekly lists. We decided that monthly and weekly were arbitrary list types that should not be broken out separately on the diagram. Instead, our diagram makes clear that 1 user can have multiple lists, and each list would have a unique ID and possibly a unique name (if the user wants). Regarding teamwork, even with all of our debates and disagreement, everyone was very professional and we ended up with a UML diagram that we all agreed on.   -Daniel
+3. [List thoughts and note your name down (if you'd like) here please!]
