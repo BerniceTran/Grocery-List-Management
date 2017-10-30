@@ -73,11 +73,18 @@
 ![alt text][team-design]
 
 	Commonalities:
-		1. [List Similarities Here]
+		1. The largest similarity between our finalized team-design as opposed to the individual ones would be the inclusion of 4 core classes for the Customer, the GroceryList, the Database, and the Items that are in the database class
+		2. The general interaction, relations, and associations between the above four core classes was also about the same for the individual ones with some differences here and there
 	Differences:
-		1. [List Differences Here]
+		1. The largest difference would be the level of detail and optimization in the team-design
+		2. In relation to the above, some of the designs were either too simple and lacking in what was necessary to complete the client's requirements, while some contained too much detail and handled extraneous information
+		3. The team-design contains much cleaner method names, relation names, class names that are more readable and self-explanatory
+		4. The team-design handles precisely what is asked for in the requirements while maintaining room for growth and modification in the case that features may need to be added or modified
+		5. Some of the major differences were refining the extra association classes and including them as methods in their respective classes such as AddItem(), GroupByType(), and SaveList() to make the design more readable and logical
+		6. Another major difference was removing and/or reincorporating some classes and methods to generalize the design (to "optimize" the design)
 	Other Notes:
 		1. Largely, I feel all four of our designs were similar. Are real life UMLs more broken out like Ricardo's or more grouped together like Naz's? -Daniel
+		2. We used Ricardo's individual-design as a foundation for the team-design and refined it further through discussion to get our current team-design -Naz
 
 
 ---
@@ -86,5 +93,10 @@
 **Conclusions:**
 
 1. To say the least, I learned how to use markdown language! -Naz
-2. When discussing changes, we found it very helpful to go back to the source documents (assignment specs, class notes, videos) to decide how to structure the diagram. One big group discussion involved how to handle addItem as that easily could be interpreted as an association class. We referred to the notes on that one and decided to leave it within the GroceryList class. The other big discussion involved how to handle different list types, such as monthly and weekly lists. We decided that monthly and weekly were arbitrary list types that should not be broken out separately on the diagram. Instead, our diagram makes clear that 1 user can have multiple lists, and each list would have a unique ID and possibly a unique name (if the user wants). Regarding teamwork, even with all of our debates and disagreement, everyone was very professional and we ended up with a UML diagram that we all agreed on.   -Daniel
-3. [List thoughts and note your name down (if you'd like) here please!]
+2. When discussing changes, we found it very helpful to go back to the source documents (assignment specs, class notes, videos) to decide how to structure the diagram. One big group discussion involved how to handle addItem as that easily could be interpreted as an association class. We referred to the notes on that one and decided to leave it within the GroceryList class. The other big discussion involved how to handle different list types, such as monthly and weekly lists. We decided that monthly and weekly were arbitrary list types that should not be broken out separately on the diagram.
+Instead, our diagram makes clear that 1 user can have multiple lists, and each list would have a unique ID and possibly a unique name (if the user wants). Regarding teamwork, even with all of our debates and disagreement, everyone was very professional and we ended up with a UML diagram that we all agreed on.   -Daniel
+3. The actual design process seems to make more sense now than when I was working individually - for example, listing out every possible necessity and class and breaking the requirements into extremely small parts is better than just trying to get a nicely optimized diagram from the start.
+It is much easier to have a good design by starting large with many objects, classes, and relations - then refining the diagram as a group by removing unnecessary things and rearranging the way certain parts interact with each other.
+Furthermore, working in a team setting helped me to understand system design on a better level as my teammates were actively able to spot ways to optimize our design that I, myself, could not see and would not notice had I been working alone. I learned a lot from working with my team and I think that's my biggest takeaway from this assignment. -Naz
+4. Oh, and to be honest, I learned doing group discussion is quite difficult; finding a method for communicating and then organizing a period where everyone can get together can be quite hard in the face of a deadline.
+Furthermore, in the case of using an online chat to communicate ideas it can be quite slow in comparison to say, doing the group work in-person. Hopefully we can find a better means of discussion in the future to increase productivity rate. -Naz
