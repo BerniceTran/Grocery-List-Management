@@ -2,8 +2,9 @@
 
 [design1]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design-Individual/DefinitelyNotSona/GroceryListUMLNaz.PNG?raw=true "Grocery List Design 1 - Nazib Mondal"
 [design2]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design-Individual/BerniceTran/GroceryListManager.png "Grocery List Design 2 - Bernice Tran"
+[design3]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design-Individual/jdapark/design.png "Grocery List Design 3 - Jooyong Park"
 [design4]:https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design-Individual/delahozric/design.jpg "Grocery List Design 4 - Ricardo Delahoz"
-Design 3 - Daniel Park
+
 
 **Design 1: Nazib Mondal**
 	![alt text][design1]
