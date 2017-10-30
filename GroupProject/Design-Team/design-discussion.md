@@ -37,7 +37,8 @@
 
 ---
 **Design 3: Jooyong "Daniel" Park**
-
+	![alt text][design3]
+	
 	Pros:
 		1. I really like the way your design is structured in a sort of top -> down style, it makes reading and following the connections easier -Naz
 		2. Also like the way features are broken down, similarly to Bernice's where the Monthly/Weekly list features are separate -Naz
