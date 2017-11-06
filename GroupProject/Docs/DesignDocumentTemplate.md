@@ -25,6 +25,8 @@ The design assumes the items database is working and negligible in its implement
 
 *Describe any constraints on the system that have a significant impact on the design of the system.*
 
+The budget and time constraints imposed for the creation of the design could have caused a flaw somewhere that might have been overlooked. As it stands however, the only constraints for the system are the platform to which the design is to be serving -which is the Android platform- and the implementation of the database that will be used with the software itself.
+
 ### 1.3 System Environment
 
 *Describe the hardware and software that the system must operate in and interact with.*
