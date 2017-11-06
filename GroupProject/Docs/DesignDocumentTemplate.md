@@ -1,4 +1,4 @@
-[components]: https://raw.githubusercontent.com/qc-se-fall2017/370Fall17Team6/58cbc33c57f9075ca9c3710e9b7cfbf55a58bbb5/GroupProject/Docs/componentDiagram.png?token=AVzenge21ELtPf_y4wQW2E9UfZH3ldHhks5aAJZDwA%3D%3D "Components Diagram - Nazib Mondal"
+[components]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/componentDiagram.png?raw=true "Components Diagram - Nazib Mondal"
 # Design Document
 
 *This is the template for your design document. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear in the final document.*
