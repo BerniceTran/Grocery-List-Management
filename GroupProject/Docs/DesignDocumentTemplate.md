@@ -2,7 +2,7 @@
 
 *This is the template for your design document. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear in the final document.*
 
-**Author**: \<person or team name\>
+**Author**: \<Team 6 - Nazib Mondal, Ricardo Delahoz, Bernice Tran, Jooyong Park\>
 
 ## 1 Design Considerations
 
@@ -46,4 +46,3 @@
 
 ## 4 User Interface Design
 *For GUI-based systems, this section should provide the specific format/layout of the user interface of the system (e.g., in the form of graphical mockups).*
-
