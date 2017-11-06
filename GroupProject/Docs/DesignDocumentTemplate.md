@@ -31,7 +31,7 @@ The budget and time constraints imposed for the creation of the design could hav
 
 *Describe the hardware and software that the system must operate in and interact with.*
 
-The hardware components the design is to be implemented on is for devices that are running the Android platform. This primarily consists of hardware that belong to the mobile device group, including phones, tablets, and laptops that might be using Android emulators. The software that this design will be working with is primarily Android and the features that come with Android development including SQLite for database interactions, as well as XML for UI design. 
+The hardware components the design is to be implemented on is for devices that are running the Android platform. This primarily consists of hardware that belong to the mobile device group, including phones, tablets, and laptops that might be using Android emulators. The software that this design will be working with is primarily Android and the features that come with Android development including SQLite for database interactions, as well as XML for UI design.
 
 ## 2 Architectural Design
 
@@ -41,9 +41,13 @@ The hardware components the design is to be implemented on is for devices that a
 
 *This section should provide and describe a diagram that shows the various components and how they are connected. This diagram shows the logical/functional components of the system, where each component represents a cluster of related functionality. In the case of simple systems, where there is a single component, this diagram may be unnecessary; in these cases, simply state so and concisely state why.*
 
+The 4 main components that will be working together in this design are the User component, the Grocery List component, the Database component and the Items component. The main interactions are between the Customer and the Grocery List UI whereby the Customer can create lists of their choice, and the GroceryDB searching for the existence of an Item that is being added in the GroceryList. The adding of an item is also done by the Customer through the use of the GroceryList UI, however the GroceryList always references the database behind the scenes with every request to add an item.
+
 ### 2.2 Deployment Diagram
 
 *This section should describe how the different components will be deployed on actual hardware devices. Similar to the previous subsection, this diagram may be unnecessary for simple systems; in these cases, simply state so and concisely state why.*
+
+For the software being developed and with the current design of the system, a Deployment Diagram is not necessary. All of the components will be deployed on the Android device in question, including the SQLite database server to handle Customer requests.  The GroceryList will be accessed through the UI of the system, as well as the Customer's information and the Items that can be added to their list.
 
 ## 3 Low-Level Design
 
