@@ -2,16 +2,24 @@
 
 *This is the template for your design document. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear in the final document.*
 
-**Author**: \<Team 6 - Nazib Mondal, Ricardo Delahoz, Bernice Tran, Jooyong Park\>
+**Author(s)**: **Team 6**
+
+* *Nazib Mondal*
+* *Ricardo Delahoz*
+* *Bernice Tran*
+* *Jooyong "Daniel" Park*
 
 ## 1 Design Considerations
 
 *The subsections below describe the issues that need to be addressed or resolved prior to or while completing the design, as well as issues that may influence the design process.*
-The interaction between the software and the items database (GroceryStoreDatabase) needs to be further defined on a lower level. As it stands we are using an imaginary database and have yet to properly implement the way the database would work. The design itself also does not reflect how the UI would be handled.
+
+[//]: # (The interaction between the software and the items database -GroceryStoreDatabase- needs to be further defined on a lower level. As it stands we are using an imaginary database and have yet to properly implement the way the database would work. The design itself also does not reflect how the UI would be handled.)
 
 ### 1.1 Assumptions
 
 *Describe any assumption, background, or dependencies of the software, its use, the operational environment, or significant project issues.*
+
+The design assumes the items database is working and negligible in its implementation; it assumes that the database is fully functional and can easily communicate between the software API and the database itself. The design also assumes that there is enough budget to handle the implementation and design of a database in the case that the team needs to build a database. The design is assumed to work only for the Android platform, but can possibly be used for porting to other platforms in the future - which is not the team's main focus at the current time.
 
 ### 1.2 Constraints
 
