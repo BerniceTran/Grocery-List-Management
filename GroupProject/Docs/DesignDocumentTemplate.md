@@ -1,3 +1,4 @@
+[components]: https://raw.githubusercontent.com/qc-se-fall2017/370Fall17Team6/58cbc33c57f9075ca9c3710e9b7cfbf55a58bbb5/GroupProject/Docs/componentDiagram.png?token=AVzenge21ELtPf_y4wQW2E9UfZH3ldHhks5aAJZDwA%3D%3D "Components Diagram - Nazib Mondal"
 # Design Document
 
 *This is the template for your design document. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear in the final document.*
@@ -38,7 +39,7 @@ The hardware components the design is to be implemented on is for devices that a
 *The architecture provides the high-level design view of a system and provides a basis for more detailed design work. These subsections describe the top-level components of the system you are building and their relationships.*
 
 ### 2.1 Component Diagram
-
+![alt text][components]
 *This section should provide and describe a diagram that shows the various components and how they are connected. This diagram shows the logical/functional components of the system, where each component represents a cluster of related functionality. In the case of simple systems, where there is a single component, this diagram may be unnecessary; in these cases, simply state so and concisely state why.*
 
 The 4 main components that will be working together in this design are the User component, the Grocery List component, the Database component and the Items component. The main interactions are between the Customer and the Grocery List UI whereby the Customer can create lists of their choice, and the GroceryDB searching for the existence of an Item that is being added in the GroceryList. The adding of an item is also done by the Customer through the use of the GroceryList UI, however the GroceryList always references the database behind the scenes with every request to add an item.
