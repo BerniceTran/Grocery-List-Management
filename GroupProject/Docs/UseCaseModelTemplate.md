@@ -1,3 +1,4 @@
+[use]:https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/UseCaseDiagram.png
 # Use Case Model
 
 *This is the template for your use case model. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear in the final document.*
@@ -5,9 +6,8 @@
 **Author**: \<person or team name\>
 
 ## 1 Use Case Diagram
-
 *This section should contain a use case diagram with all the actors and use cases for the system, suitably connected.*
-
+![use]
 ## 2 Use Case Descriptions
 
 *For each use case in the use case diagram, this section should contain a description, with the following elements:*
