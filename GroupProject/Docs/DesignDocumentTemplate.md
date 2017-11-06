@@ -47,7 +47,7 @@ The 4 main components that will be working together in this design are the User 
 
 *This section should describe how the different components will be deployed on actual hardware devices. Similar to the previous subsection, this diagram may be unnecessary for simple systems; in these cases, simply state so and concisely state why.*
 
-For the software being developed and with the current design of the system, a Deployment Diagram is not necessary. All of the components will be deployed on the Android device in question, including the SQLite database server to handle Customer requests.  The GroceryList will be accessed through the UI of the system, as well as the Customer's information and the Items that can be added to their list.
+For the software being developed and with the current design of the system, a Deployment Diagram is not necessary. All of the components will be deployed on the Android device in question, including the SQLite database server to handle Customer requests.  The GroceryList will be accessed through the UI of the system, as well as the Customer's information and the Items that can be added to their list. As such, no diagram should be required with the current status of the system design.
 
 ## 3 Low-Level Design
 
