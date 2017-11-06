@@ -31,6 +31,8 @@ The budget and time constraints imposed for the creation of the design could hav
 
 *Describe the hardware and software that the system must operate in and interact with.*
 
+The hardware components the design is to be implemented on is for devices that are running the Android platform. This primarily consists of hardware that belong to the mobile device group, including phones, tablets, and laptops that might be using Android emulators. The software that this design will be working with is primarily Android and the features that come with Android development including SQLite for database interactions, as well as XML for UI design. 
+
 ## 2 Architectural Design
 
 *The architecture provides the high-level design view of a system and provides a basis for more detailed design work. These subsections describe the top-level components of the system you are building and their relationships.*
