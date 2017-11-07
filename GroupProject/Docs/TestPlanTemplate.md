@@ -61,9 +61,10 @@ System testing: Android Virtual Device (AVD) manager in Android Studio where var
 
 ## 2 Test Cases
 
-*This section should be the core of this document. You should provide a table of test cases, one per row. For each test case, the table should provide its purpose, the steps necessary to perform the test, the expected result, the actual result (to be filled later), pass/fail information (to be filled later), and any additional information you think is relevant.*
-
+### Test Cases
 [testCases]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/TestCases.png
 ![alt text][testCases]
+
+### Test Steps
 [testSteps]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/TestSteps.png
 ![alt text][testSteps]
