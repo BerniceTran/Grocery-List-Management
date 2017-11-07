@@ -50,10 +50,10 @@ Tools:
 
 ### Test Cases
 Each test case has a unique test case ID denoted by TCID.  
-[testCases]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/TestCases.png
+[testCases]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/TestCases.png  
 ![alt text][testCases]
 
 ### Test Steps
 Each test case has a step-by-step procedure denoted by SID, corresponding to its TCID.  
-[testSteps]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/TestSteps.png
+[testSteps]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/TestSteps.png  
 ![alt text][testSteps]
