@@ -1,4 +1,4 @@
-[use]:https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/UseCaseDiagram.png
+[use]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/designPNG/UseCaseDiagram.png
 # Use Case Model
 
 **Author**: Nazib Mondal, Ricardo Delahoz, Bernice Tran, Jooyong Park
