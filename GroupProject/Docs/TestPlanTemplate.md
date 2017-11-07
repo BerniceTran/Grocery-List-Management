@@ -16,8 +16,7 @@ Integration Testing: Here, we will test the interaction or combined pieces of co
 
 System Testing: The objective of system testing is to identify defects that will only surface when a complete system is assembled. Here, because this will be a native Android application, we will test the application behavior with various Android environments/operating systems and hardware combinations by testing on emulated or real devices. This will be performed by quality assurance teams.
 
-Regression Testing: Here, regression testing will only be done if new functionality is added to the application to ensure that the objective of regression testing is to check that old functionality has not been broken by new functionality or changes made in application. Like system testing, we will perform regression testing on emulated or real devices. This will be performed by quality assurance teams.
-
+Regression Testing: Here, regression testing will only be done if new functionality is added to the application to ensure that old functionality has not been broken by new functionality or changes made in the application. Like system testing, we will perform regression testing on emulated or real devices. This will be performed by quality assurance teams.
 
 **Black-box Testing**
 
