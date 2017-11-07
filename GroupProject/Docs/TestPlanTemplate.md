@@ -33,7 +33,7 @@ User interface testing will be done to ensure that our application meets its fun
 
 ### 1.4 Bug Tracking
 
-As we are using a human tester to test the functional aspects, we will also use a human tester to report bugs. We will capture bug reports directly from a device by using either **Take a bug report** developer option on the device, or through the Android Emulator menu. These bug reports contains device logs, stack traces, and other diagnostic information to help find and fix bugs.
+As we are using a human tester to test the functional aspects, we will also use a human tester to report bugs. We will capture bug reports directly from a device by using either **Take a bug report** developer option on the device, or through the Android Emulator menu. These bug reports contain device logs, stack traces, and other diagnostic information to help find and fix bugs.
 
 ### 1.5 Technology
 
@@ -49,9 +49,11 @@ Tools:
 ## 2 Test Cases
 
 ### Test Cases
+Each test case has a unique test case ID denoted by TCID.
 [testCases]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/TestCases.png
 ![alt text][testCases]
 
 ### Test Steps
+Each test case has a step-by-step procedure denoted by SID, corresponding to its TCID.
 [testSteps]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/TestSteps.png
 ![alt text][testSteps]
