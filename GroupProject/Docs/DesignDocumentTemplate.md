@@ -1,5 +1,6 @@
 [components]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/componentDiagram.png?raw=true "Components Diagram - Nazib Mondal"
-[low-level-class]:https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design-Team/teamDesign.PNG "Class Diagram"
+[low-level-class]:https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design-Team/teamDesign.PNG "Class Diagram - Team Design"
+[UI]:https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/designUI.png?raw=true "UI Design - Nazib Mondal"
 # Design Document
 
 *This is the template for your design document. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear in the final document.*
@@ -85,3 +86,4 @@ For the software being developed and with the current design of the system, a De
 
 ## 4 User Interface Design
 *For GUI-based systems, this section should provide the specific format/layout of the user interface of the system (e.g., in the form of graphical mockups).*
+![alt text][UI]
