@@ -1,4 +1,4 @@
-[use]:
+[use]:https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/UseCaseDiagram.png
 # Use Case Model
 
 *This is the template for your use case model. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear in the final document.*
