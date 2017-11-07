@@ -1,6 +1,6 @@
-[components]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/componentDiagram.png?raw=true "Components Diagram - Nazib Mondal"
+[components]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/designPNG/componentDiagram.png "Components Diagram - Nazib Mondal"
 [low-level-class]:https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design-Team/teamDesign.PNG "Class Diagram - Team Design"
-[UI]:https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/designUI.png?raw=true "UI Design - Nazib Mondal"
+[UI]:https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/designPNG/designUI.png "UI Design - Nazib Mondal"
 # Design Document
 
 **Author(s)**: **Team 6**
