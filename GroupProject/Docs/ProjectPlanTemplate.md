@@ -28,10 +28,14 @@ Our app makes managing grocery lists simple. Our intuitive UI makes it easy for 
 ## 3 Team
 Team Members - Nazib Mondal, Ricardo Delahoz, Bernice Tran, Jooyong Park
 
-**Nazib Mondal** -  Architecture Designer / Software Engineer  - Nazib will oversee overall architectural design of the app and and make sure design diagrams are properly written. Nazib will also contribute to programming the app. 
-**Ricardo Delahoz** - Project Manager / Software Engineer  - Ricardo will submit the final assignment and make sure all checkpoints are being hit along the way to the final submission. He will also assign roles and deadlines as necessary. Ricardo will also contribute to programming the app. 
-**Bernice Tran** - Head of QA and Testing / Software Engineer - Bernice will oversee all app testing which includes designing all tests, writing them, and recording the outcomes. Bernice will also contribute to programming the app. 
+**Nazib Mondal** -  Architecture Designer / Software Engineer  - Nazib will oversee overall architectural design of the app and make sure design diagrams are properly written. Nazib will also contribute to programming the app.
+
+**Ricardo Delahoz** - Project Manager / Software Engineer  - Ricardo will submit the final assignment and make sure all checkpoints are being hit along the way to the final submission. He will also assign roles and deadlines as necessary. Ricardo will also contribute to programming the app.
+
+**Bernice Tran** - Head of QA and Testing / Software Engineer - Bernice will oversee all app testing which includes designing all tests, writing them, and recording the outcomes. Bernice will also contribute to programming the app.
+
 **Jooyong Park** - Documenter / UI Designer / Software Engineer - Jooyong will look over and edit all submitted documents to make sure they match the clients' criteria and are easily understandable. Jooyong will also head up UI design and contribute to programming the app. 
+
 
 | Name          | S. Engineering           | Proj Mgmt  | Architecture/UI Design        | Testing           | Documentation |
 | ------------- |:-------------:| -----:|-----:|-----:|-----:|
