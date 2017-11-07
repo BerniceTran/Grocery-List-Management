@@ -1,4 +1,5 @@
-[components]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/componentDiagram.png?raw=true "Components Diagram - Nazib Mondal"
+[components]: https://raw.githubusercontent.com/qc-se-fall2017/370Fall17Team6/58cbc33c57f9075ca9c3710e9b7cfbf55a58bbb5/GroupProject/Docs/componentDiagram.png?token=AVzenge21ELtPf_y4wQW2E9UfZH3ldHhks5aAJZDwA%3D%3D "Components Diagram - Nazib Mondal"
+[low-level-class]:https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design-Team/teamDesign.PNG "Class Diagram"
 # Design Document
 
 *This is the template for your design document. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear in the final document.*
@@ -75,7 +76,7 @@ For the software being developed and with the current design of the system, a De
 *Describe the low-level design for each of the system components identified in the previous section. For each component, you should provide details in the following UML diagrams to show its internal structure.*
 
 ### 3.1 Class Diagram
-
+![alt text][low-level-class]
 *In the case of an OO design, the internal structure of a software component would typically be expressed as a UML class diagram that represents the static class structure for the component and their relationships.*
 
 ### 3.2 Other Diagrams
