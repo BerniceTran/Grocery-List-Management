@@ -49,11 +49,11 @@ Tools:
 ## 2 Test Cases
 
 ### Test Cases 
-[testCases]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/TestCases.png  
+[testCases]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/designPNG/TestCases.png
 Each test case has a unique test case ID denoted by TCID. 
 ![alt text][testCases]
 
 ### Test Steps
-[testSteps]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/TestSteps.png  
+[testSteps]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/designPNG/TestSteps.png  
 Each test case has a step-by-step procedure denoted by SID, corresponding to its TCID.  
 ![alt text][testSteps]
