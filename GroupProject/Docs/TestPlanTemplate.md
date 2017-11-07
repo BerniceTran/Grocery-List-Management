@@ -50,15 +50,20 @@ User interface testing will be done to ensure that our application meets its fun
 *Describe any testing technology you intend to use or build (e.g., JUnit, Selenium).*
 
 Tools:
--Android SDK
--Android Studio (version)
--AndroidJUnitRunner
--JUnit 4 Rules
--Automation tool: Espresso (works with AndroidJUnitTestRunner)
--Functional testing: We will use a human tester and Espresso testing framework, provided by Android Testing Support Library, to simulate user interactions
--System testing: Android Virtual Device (AVD) manager in Android Studio where various emulated/virtual devices that mimic a wide range of device types and configurations can be used to test the app
+Android SDK
+Android Studio (version)
+AndroidJUnitRunner
+JUnit 4 Rules
+Automation tool: Espresso (works with AndroidJUnitTestRunner)
+Functional testing: We will use a human tester and Espresso testing framework, provided by Android Testing Support Library, to simulate user interactions
+System testing: Android Virtual Device (AVD) manager in Android Studio where various emulated/virtual devices that mimic a wide range of device types and configurations can be used to test the app
 
 
 ## 2 Test Cases
 
 *This section should be the core of this document. You should provide a table of test cases, one per row. For each test case, the table should provide its purpose, the steps necessary to perform the test, the expected result, the actual result (to be filled later), pass/fail information (to be filled later), and any additional information you think is relevant.*
+
+[testCases]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/TestCases.png
+![alt text][testCases]
+[testSteps]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/TestSteps.png
+![alt text][testSteps]
