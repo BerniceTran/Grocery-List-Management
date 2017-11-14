@@ -4,7 +4,7 @@
 **Author**: Nazib Mondal, Ricardo Delahoz, Bernice Tran, Jooyong Park
 
 ## 1 Use Case Diagram
-*This section should contain a use case diagram with all the actors and use cases for the system, suitably connected.*
+
 ![use]
 ## 2 Use Case Descriptions
 

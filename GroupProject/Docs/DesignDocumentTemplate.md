@@ -14,19 +14,24 @@
 
 [//]: # (This is just a comment - The interaction between the software and the items database -GroceryStoreDatabase- needs to be further defined on a lower level. As it stands we are using an imaginary database and have yet to properly implement the way the database would work. The design itself also does not reflect how the UI would be handled.)
 
-### 1.1 Assumptions
+### 1.1 Assumptions v1.2
 
-* The design assumes the items database is working and negligible in its implementation.
+* ~~The design assumes the items database is working and negligible in its implementation.~~
+* The design assumes a database will be developed that contains an exhaustive amount of common entities that a user would likely search for. This is to reduce insertion times for new data that needs to be added into the database.
+* There are dependencies between the groceryList, the Items, and the Users tables for our SQLite Database Design, we are
+assuming that these dependencies are resolvable and should not hinder the implementation progress of this design.
 * It assumes that the database is fully functional and can easily communicate between the software API and the database itself.
-* The design also assumes that there is enough budget to handle the implementation and design of a database in the case that the team needs to build a database.
-* The design is assumed to work only for the Android platform, but can possibly be used for porting to other platforms in the future - which is not the team's main focus at the current time.
+* The design also assumes that there is enough budget to handle the implementation and design of a database.
+* The design is assumed to work only for the Android platform, but can possibly be used for porting to other platforms in the future - which is still not the team's main focus at the current time.
+* The design assumes hardware should not be an issue for the user that is running this app.
 
-### 1.2 Constraints
+### 1.2 Constraints v1.2
 
 * The budget and time constraints imposed for the creation of the design could have caused a flaw somewhere that might have been overlooked.
 * As it stands however, the only constraints for the system are the platform to which the design is to be serving -which is the Android platform- and the implementation of the database that will be used with the software itself.
+* There can be physical constraints depending on the user's device itself, whereby their device may not contain enough storage to handle the app's features in question.
 
-### 1.3 System Environment
+### 1.3 System Environment v1.2
 
 * The hardware components the design is to be implemented on is for devices that are running the Android platform.
 * This primarily consists of hardware that belong to the mobile device group, including:
@@ -36,28 +41,35 @@
  * Laptops that might be using an Android emulators
 
 * The software that this design will be working with is primarily Android and the features that come with Android development including SQLite for database interactions, as well as XML for UI design.
+* The SQLite database will be used for searching as well as for data persistence when the user shuts off the app.
 
 ## 2 Architectural Design
 
-### 2.1 Component Diagram
+### 2.1 Component Diagram v1.2
 ![alt text][components]
 
 * The 4 main components that will be working together in this design are:
+
  * The User component
  * The Grocery List component
  * The Database component
  * The Items component.
-* The main interactions are between the Customer and the Grocery List UI whereby the Customer can create lists of their choice, and the GroceryDB searching for the existence of an Item that is being added in the GroceryList.
-* The adding of an item is also done by the Customer through the use of the GroceryList UI, however the GroceryList always references the database behind the scenes with every request to add an item.
 
-### 2.2 Deployment Diagram
+* During actual usage of the app, the main interactions are between the Customer and the Grocery List UI (whereby the Customer can create lists of their choice), and the GroceryDB searching for the existence of an Item that is being added in the GroceryList.
+* The adding of an item is also done by the Customer through the use of the GroceryList UI, however the GroceryList always references the database behind the scenes with every request to search for an add-able item.
+* The user can also add items to the DB in the case an item does not existing.
+* Each individual list will have access to a local centralized GroceryDB, but will have their own tables to handle Item quantities
 
-For the software being developed and with the current design of the system, a Deployment Diagram is not necessary. All of the components will be deployed on the Android device in question, including the SQLite database server to handle Customer requests.  The GroceryList will be accessed through the UI of the system, as well as the Customer's information and the Items that can be added to their list. As such, no diagram should be required with the current status of the system design.
+### 2.2 Deployment Diagram v1.2
+
+For the software being developed and with the current design of the system, a Deployment Diagram is not necessary. All of the components will be deployed on the Android device in question, including the local SQLite database to handle Customer requests and data persistence. The GroceryList will be accessed through the UI of the system, as well as the Customer's information and the Items that can be added to their list. The save states of each, the GroceryList, the corresponding Items in each list and their quantities will be handled via SQLite's local database to aid in data persistence. As such, no diagram should be required with the current status of the system design.
 
 ## 3 Low-Level Design
 
 ### 3.1 Class Diagram
+**Current UML Design**
 ![alt text][low-level-class]
 
 ## 4 User Interface Design
+**Concept UI**
 ![alt text][UI]

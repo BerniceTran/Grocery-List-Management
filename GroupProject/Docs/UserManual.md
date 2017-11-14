@@ -37,7 +37,7 @@ or press and hold a list.
 9. If you're out shopping and you've gotten the item you want, you can tap a checkbox to mark it.
 
 10. If you think you don't need an item after making the list, that's fine too! Just press and
- hold the item's name and select the "Delete" option - OR reduce the quantity number to 0!
+ hold the item's name and select the "Delete" option - OR reduce the quantity number to 0.
 
 11. If you want to check a different list, simply tap your mobile device's corresponding "back"
- key and you'll be back at the main menu screen!
+ key and you'll be back at the main menu screen.
