@@ -2,6 +2,8 @@ package glm.seclass.qc.edu.grocerylistmanagement;
 
 import org.junit.Test;
 
+import glm.seclass.qc.edu.grocerylistmanagement.GroceryItems;
+import glm.seclass.qc.edu.grocerylistmanagement.GroceryItems.Item;
 import static org.junit.Assert.*;
 
 /**
@@ -20,11 +22,11 @@ public
 }
 */
 public class ItemsTest{
-  private Item i;
+  Item i = new Item();
 
   @Before
   public void setUp(){
-    i = new Item();
+
   }
 
   @After
@@ -40,7 +42,7 @@ public class ItemsTest{
   @Test
   public void testSearchItem1(){
     i.setName("Bacon");
-    assertEquals(true, i.searchItem())
+    assertEquals(true, i.searchItem());
   }
 
   /*
@@ -50,7 +52,7 @@ public class ItemsTest{
   @Test
   public void testSearchItem2(){
     i.setName("Happiness");
-    assertEquals(false, i.searchItem())
+    assertEquals(false, i.searchItem());
   }
 
   /*
@@ -61,7 +63,7 @@ public class ItemsTest{
   @Test (expected = IllegalArgumentException.class)
   public void testSearchItem3(){
     i.setName("1Bacon");
-    assertEquals(false, i.searchItem())
+    assertEquals(false, i.searchItem());
   }
 
   /*
@@ -72,7 +74,7 @@ public class ItemsTest{
   @Test (expected = IllegalArgumentException.class)
   public void testSearchItem4(){
     i.setName("Bacon~!");
-    assertEquals(false, i.searchItem())
+    assertEquals(false, i.searchItem());
   }
 
   /*
@@ -83,7 +85,7 @@ public class ItemsTest{
   @Test
   public void testSearchItem5(){
     i.setName("");
-    assertEquals(false, i.searchItem())
+    assertEquals(false, i.searchItem());
   }
 
   /*
@@ -94,7 +96,7 @@ public class ItemsTest{
   @Test
   public void testSearchItem6(){
     i.setName("       ");
-    assertEquals(false, i.searchItem())
+    assertEquals(false, i.searchItem());
   }
 
   /*
@@ -105,7 +107,7 @@ public class ItemsTest{
   @Test (expected = IllegalArgumentException.class)
   public void testSearchItem7(){
     i.setName("B4c0n");
-    assertEquals(false, i.searchItem())
+    assertEquals(false, i.searchItem());
   }
 
   /*
@@ -116,6 +118,6 @@ public class ItemsTest{
   @Test (expected = IllegalArgumentException.class)
   public void testSearchItem8(){
     i.setName("12345");
-    assertEquals(false, i.searchItem())
+    assertEquals(false, i.searchItem());
   }
 }
