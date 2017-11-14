@@ -48,6 +48,8 @@ public class GroceryItems extends AppCompatActivity {
 
         itemList = new ArrayList<Item>();
 
+        lv = (ListView) findViewById(R.id.itemList);
+
         itemDB = this.openOrCreateDatabase("Items",MODE_PRIVATE,null);
         itemDB.execSQL("CREATE TABLE IF NOT EXISTS items (ItemID INTEGER PRIMARY KEY, itemName VARCHAR, itemType VARCHAR, price DOUBLE)");
         itemDB.execSQL("CREATE TABLE IF NOT EXISTS listItems (ListItemID INTEGER PRIMARY KEY, ListID INTEGER, ItemID INTEGER, Quantity INTEGER)");
@@ -78,23 +80,28 @@ public class GroceryItems extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+
         if(id == R.id.createItem){
+
 
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Search for item:");
             final EditText input = new EditText(this);
             builder.setView(input);
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+
+
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    Item item = new Item();
+
                     searchItem = input.getText().toString();
+                    Item product = new Item();
 
-                    item.setName(searchItem); //setting name to item object
-                    itemList.add(item);
+                    product.setName(searchItem); //setting name to item object
+                    itemList.add(product);
 
-                    lv = (ListView) findViewById(R.id.itemList);
                     ItemAdapter adapter = new ItemAdapter(getApplicationContext(), R.layout.item_row, itemList);
+
                     lv.setAdapter(adapter);
 
 
