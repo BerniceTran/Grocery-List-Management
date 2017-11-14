@@ -1,12 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="glm.seclass.qc.edu.grocerylistmanagement.GroceryLists">
+    tools:context="glm.seclass.qc.edu.grocerylistmanagement.GroceryItems">
 
-
-    <item android:id="@+id/createList"
+    <item android:id="@+id/createItem"
         android:icon="@drawable/ic_add_circle_outline_white_48dp"
-        android:title="@string/createList"
+        android:title="@string/createItem"
         app:showAsAction="ifRoom" />
 
 </menu>
