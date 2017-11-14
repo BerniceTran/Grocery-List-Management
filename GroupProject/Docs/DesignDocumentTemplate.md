@@ -1,6 +1,7 @@
 [components]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/designPNG/componentDiagram.png "Components Diagram - Nazib Mondal"
 [low-level-class]:https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design-Team/teamDesign.PNG "Class Diagram - Team Design"
 [UI]:https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/designPNG/designUI.png "UI Design - Nazib Mondal"
+[here]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/UserManual.md
 # Design Document
 
 **Author(s)**: **Team 6**
@@ -73,3 +74,4 @@ For the software being developed and with the current design of the system, a De
 ## 4 User Interface Design
 **Concept UI**
 ![alt text][UI]
+This is the initial concept design for our final product. A full explanation of how to use the app's functions can be found [here].
