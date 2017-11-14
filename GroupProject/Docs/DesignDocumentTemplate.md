@@ -36,9 +36,9 @@ assuming that these dependencies are resolvable and should not hinder the implem
 * The hardware components the design is to be implemented on is for devices that are running the Android platform.
 * This primarily consists of hardware that belong to the mobile device group, including:
 
- * Phones
- * Tablets
- * Laptops that might be using an Android emulators
+ 1. Phones
+ 2. Tablets
+ 3. Laptops that might be using an Android emulators
 
 * The software that this design will be working with is primarily Android and the features that come with Android development including SQLite for database interactions, as well as XML for UI design.
 * The SQLite database will be used for searching as well as for data persistence when the user shuts off the app.
@@ -48,12 +48,12 @@ assuming that these dependencies are resolvable and should not hinder the implem
 ### 2.1 Component Diagram v1.2
 ![alt text][components]
 
-* The 4 main components that will be working together in this design are:
+**The 4 main components that will be working together in this design are:**
 
- * The User component
- * The Grocery List component
- * The Database component
- * The Items component.
+ 1. The User component
+ 2. The Grocery List component
+ 3. The Database component
+ 4. The Items component.
 
 * During actual usage of the app, the main interactions are between the Customer and the Grocery List UI (whereby the Customer can create lists of their choice), and the GroceryDB searching for the existence of an Item that is being added in the GroceryList.
 * The adding of an item is also done by the Customer through the use of the GroceryList UI, however the GroceryList always references the database behind the scenes with every request to search for an add-able item.
