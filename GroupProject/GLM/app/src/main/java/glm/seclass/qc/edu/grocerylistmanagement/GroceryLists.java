@@ -20,6 +20,11 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.HashMap;
+import java.util.Map.Entry;
+import java.util.Set;
+
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -30,10 +35,13 @@ public class GroceryLists extends AppCompatActivity {
     ArrayList<String> groceryList = null;
     ArrayAdapter<String> adapter = null;
     ListView lv = null;
+    HashMap<String, String> lists  = new HashMap<String, String>();
     int pos;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grocery_lists);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -90,28 +98,29 @@ public class GroceryLists extends AppCompatActivity {
         //Access to the list view
         switch(selectedItemId) {
             case R.id.deleteList:
+                String nameToDelete = adapter.getItem(pos);
                 //remove
                 adapter.remove(groceryList.get(pos));
-                String nameToDelete = "yoyo";
+
                 listDB.execSQL("DELETE FROM lists where lists.listName = '"+ nameToDelete +"'  ");
                 //refresh
                 adapter.notifyDataSetChanged();
 
                 break;
             case R.id.renameList:
+                String oldName = adapter.getItem(pos);
                 adapter.remove(groceryList.get(pos));
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("Edit name:");
                 final EditText input = new EditText(this);
                 String newName = input.getText().toString();
-                String oldName = "yoyo";
 
                 builder.setView(input);
                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         adapter.insert(input.getText().toString(), pos);
-                        Collections.sort(groceryList);
+                       // Collections.sort(groceryList);
                     }
                 });
                 builder.show();
@@ -148,6 +157,8 @@ public class GroceryLists extends AppCompatActivity {
                     groceryList.add(DBhelper);
                     Collections.sort(groceryList);
                     lv.setAdapter(adapter);
+
+                    adapter.getCount();
 
                     //insert into database here
                     listDB.execSQL("INSERT INTO lists (listName) VALUES ('" + DBhelper + "')");
