@@ -1,7 +1,9 @@
 [components]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/designPNG/componentDiagram.png "Components Diagram - Nazib Mondal"
 [low-level-class]:https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Design-Team/teamDesign.PNG "Class Diagram - Team Design"
 [UI]:https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/designPNG/designUI.png "UI Design - Nazib Mondal"
+[states]:https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/designPNG/UIStates.png?raw=true "UI States v1.2 - Nazib Mondal"
 [here]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/UserManual.md
+[link]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/diagramPDF/UIStates.pdf
 # Design Document
 
 **Author(s)**: **Team 6**
@@ -13,7 +15,7 @@
 
 ## 1 Design Considerations
 
-[//]: # (This is just a comment - The interaction between the software and the items database -GroceryStoreDatabase- needs to be further defined on a lower level. As it stands we are using an imaginary database and have yet to properly implement the way the database would work. The design itself also does not reflect how the UI would be handled.)
+[//]: # ~~~(This is just a comment - The interaction between the software and the items database -GroceryStoreDatabase- needs to be further defined on a lower level. As it stands we are using an imaginary database and have yet to properly implement the way the database would work. The design itself also does not reflect how the UI would be handled.)~~~
 
 ### 1.1 Assumptions v1.2
 
@@ -75,3 +77,8 @@ For the software being developed and with the current design of the system, a De
 **Concept UI**
 ![alt text][UI]
 This is the initial concept design for our final product. A full explanation of how to use the app's functions can be found [here].
+
+**Version 1.2 UI with States**
+As of GLM v1.2 this is the UI's current design with its corresponding states - the pdf for this diagram can be found at this [link].
+*Note - due to scalability issues, it would be best to open the image in a new tab to zoom in.*
+![alt text][states]
