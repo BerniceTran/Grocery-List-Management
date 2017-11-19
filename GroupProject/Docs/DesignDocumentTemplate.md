@@ -79,6 +79,8 @@ For the software being developed and with the current design of the system, a De
 This is the initial concept design for our final product. A full explanation of how to use the app's functions can be found [here].
 
 **Version 1.2 UI with States**
+
 As of GLM v1.2 this is the UI's current design with its corresponding states - the pdf for this diagram can be found at this [link].
+
 *Note - due to scalability issues, it would be best to open the image in a new tab to zoom in.*
 ![alt text][states]
