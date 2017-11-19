@@ -15,7 +15,7 @@
 
 ## 1 Design Considerations
 
-[//]: # ~~~(This is just a comment - The interaction between the software and the items database -GroceryStoreDatabase- needs to be further defined on a lower level. As it stands we are using an imaginary database and have yet to properly implement the way the database would work. The design itself also does not reflect how the UI would be handled.)~~~
+[//]: # (~~~This is just a comment - The interaction between the software and the items database -GroceryStoreDatabase- needs to be further defined on a lower level. As it stands we are using an imaginary database and have yet to properly implement the way the database would work. The design itself also does not reflect how the UI would be handled.~~~)
 
 ### 1.1 Assumptions v1.2
 
