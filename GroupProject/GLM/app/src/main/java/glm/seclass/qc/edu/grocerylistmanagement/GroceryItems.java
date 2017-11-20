@@ -89,16 +89,16 @@ public class GroceryItems extends AppCompatActivity {
 
         if(id == R.id.createItem){
 
+            final Context cont = this;
 
-            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(cont);
             builder.setTitle("Search for item:");
-            final EditText input = new EditText(this);
+            final EditText input = new EditText(cont);
             builder.setView(input);
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     final String in = input.getText().toString();
-
                     if(searchItem(in) == true) {
                         itemList.add(in);
                         ListAdapter itemAdapter = new CustomArrayAdapter(getApplicationContext(), itemList);
@@ -107,14 +107,16 @@ public class GroceryItems extends AppCompatActivity {
                     }
                     else if(searchItem(in) == false) {
                         //creates dialog for the new item being added to the database
-                        builder.setTitle("Item not found. Input Type.");
-                        builder.setView(input);
-                        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        AlertDialog.Builder builder1 = new AlertDialog.Builder(cont);
+                        builder1.setTitle("Item not found. Input Type.");
+                        final EditText input = new EditText(cont);
+                        builder1.setView(input);
+                        builder1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 String newItemName = in;
                                 String newItemCategory = input.getText().toString();
-                                itemDB.execSQL("INSERT INTO items (itemName, itemType, price) VALUES ('" + newItemName + "','" + newItemCategory + "')");
+                                itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('" + newItemName + "','" + newItemCategory + "')");
 
                                 //Adding the new item to the list
                                 itemList.add(newItemName);
@@ -123,13 +125,13 @@ public class GroceryItems extends AppCompatActivity {
                                 itemListView.setAdapter(itemAdapter);
                             }
                         });
-                        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        builder1.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int which) {
                                 dialogInterface.cancel();
                             }
                         }); //end type dialog
-                        builder.show();
+                        builder1.show();
                     }
                 }
             });
@@ -140,31 +142,11 @@ public class GroceryItems extends AppCompatActivity {
                 }
             });
             builder.show();
-
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
-/*
-    private boolean searchItem(String name) {
-        boolean match = false;
-        String searchedName = name;
-        Cursor c = itemDB.rawQuery("SELECT * FROM items",null);
-        int nameIndex = c.getColumnIndex("itemName");
-        int counter = 0;
-        c.moveToFirst();
 
-        while(c != null) {
-            String comparisonName = c.getString(nameIndex);
-            if(searchedName.equals(comparisonName)) {
-                return true;
-            }
-            else
-                c.moveToNext();
-        }
-        return false;
-    }
-*/
     private boolean searchItem(String input) {
         boolean match = false;
         Cursor c = itemDB.rawQuery("SELECT * FROM items",null);
@@ -182,5 +164,7 @@ public class GroceryItems extends AppCompatActivity {
         c.close();
         return false;
     }
+
+
 
 }
