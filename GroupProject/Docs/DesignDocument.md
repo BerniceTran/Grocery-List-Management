@@ -41,7 +41,7 @@ assuming that these dependencies are resolvable and should not hinder the implem
 
  1. Phones
  2. Tablets
- 3. Laptops that might be using an Android emulators
+ 3. Laptops that might be using an Android emulator
 
 * The software that this design will be working with is primarily Android and the features that come with Android development including SQLite for database interactions, as well as XML for UI design.
 * The SQLite database will be used for searching as well as for data persistence when the user shuts off the app.
@@ -71,16 +71,20 @@ For the software being developed and with the current design of the system, a De
 
 ### 3.1 Class Diagram
 **Current UML Design**
+
+This is the current class design for the system to be functional. Any changes will be noted through version number.
 ![alt text][low-level-class]
 
 ## 4 User Interface Design
 **Concept UI**
-![alt text][UI]
+
 This is the initial concept design for our final product. A full explanation of how to use the app's functions can be found [here].
+![alt text][UI]
 
 **Version 1.2 UI with States**
 
 As of GLM v1.2 this is the UI's current design with its corresponding states - the pdf for this diagram can be found at this [link].
 
 *Note - due to scalability issues, it would be best to open the image in a new tab to zoom in.*
+
 ![alt text][states]
