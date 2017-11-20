@@ -1,6 +1,6 @@
 # Test Plan
 
-**Author**: Bernice Tran, Nazib Mondal
+**Author(s)**: Bernice Tran, Nazib Mondal
 
 ## 1 Testing Strategy
 
