@@ -74,14 +74,12 @@ public class GroceryItems extends AppCompatActivity {
 
         if(id == R.id.createItem){
 
-<<<<<<< HEAD
             final AlertDialog.Builder builder = new AlertDialog.Builder(this);
             final AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
-=======
+
             final Context cont = this;
 
             AlertDialog.Builder builder = new AlertDialog.Builder(cont);
->>>>>>> 2bd28b8cbe52af31d9d9a25d9c8a4a477b753a92
             builder.setTitle("Search for item:");
             final EditText input = new EditText(cont);
             builder.setView(input);
