@@ -79,7 +79,7 @@ public class GroceryItems extends AppCompatActivity {
 
             final Context cont = this;
 
-            builder.setTitle("Search for item to be added:");
+            builder.setTitle("Item to be added:");
             final EditText input = new EditText(cont);
             builder.setView(input);
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
