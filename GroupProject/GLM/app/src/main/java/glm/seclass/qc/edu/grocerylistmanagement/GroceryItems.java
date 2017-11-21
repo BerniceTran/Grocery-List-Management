@@ -79,7 +79,7 @@ public class GroceryItems extends AppCompatActivity {
 
             final Context cont = this;
 
-            builder.setTitle("Search for item:");
+            builder.setTitle("Search for item to be added:");
             final EditText input = new EditText(cont);
             builder.setView(input);
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -95,7 +95,7 @@ public class GroceryItems extends AppCompatActivity {
                     else if(searchItem(in) == false) {
                         //creates dialog for the new item being added to the database
                         AlertDialog.Builder builder1 = new AlertDialog.Builder(cont);
-                        builder1.setTitle("Item not found. Input Type.");
+                        builder1.setTitle("Item not found. Type in the item type: ");
                         final EditText input = new EditText(cont);
                         builder1.setView(input);
                         builder1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -133,11 +133,11 @@ public class GroceryItems extends AppCompatActivity {
             builder.show();
             return true;
         }
-//
-//        if(id == R.id.deleteItem){
-//
-//
-//        }
+
+        if(id == R.id.deleteItem){
+
+
+        }
 
         return super.onOptionsItemSelected(item);
     }
