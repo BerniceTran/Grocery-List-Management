@@ -8,7 +8,7 @@
 
 For our Grocery List Manager application, we will employ various black-box and white-box testing techniques as follows:
 
-**White-box Testing v1.2**
+**White-box Testing v1.4**
 
 Unit Testing: Here, we will design an isolated test for every non-UI class being implemented to ensure that it is behaving exactly as expected. This will be performed by the developers. Most of the white-box testing tools for Unit Testing will be handled through the usage of automation using Android Studio's built-in unit tester.
 
@@ -16,9 +16,9 @@ Integration Testing: Here, we will test the interaction or combined pieces of co
 
 System Testing: The objective of system testing is to identify defects that will only surface when a complete system is assembled. Here, because this will be a native Android application, we will test the application behavior with various Android environments/operating systems and hardware combinations by testing on emulated or real devices. This will be performed by quality assurance teams.
 
-Regression Testing: Here, regression testing will only be done if new functionality is added to the application to ensure that old functionality has not been broken by new functionality or changes made in the application. Like system testing, we will perform regression testing on emulated or real devices. This will be performed by quality assurance teams. Regression testing will also be implemented when a bug is found in the current live version of the app, and whenever changes to the code to handle the bug occurs; this may include the modification of legacy code, to which there Regression Testing will occur again by running the newly fixed system against the former test cases.
+Regression Testing: Here, regression testing will only be done if new functionality is added to the application to ensure that old functionality has not been broken by new functionality or changes made in the application. Like system testing, we will perform regression testing on emulated or real devices. This will be performed by quality assurance teams. Regression testing will also be implemented when a bug is found in the current live version of the app, and whenever changes to the code to handle the bug occurs; this may include the modification of legacy code, to which Regression Testing will occur again by running the newly fixed system against the original test cases.
 
-**Black-box Testing v1.2**
+**Black-box Testing v1.4**
 
 Functional Testing: Here, we will test the application against its specifications or use cases to ensure that the application is working as per the requirements. These Functional tests check that certain expected inputs result in expected outputs. Most of the test conducted for this is driven by the user interface and so will be performed by testers or quality assurance analysts. The majority of UI testing and use-case testing will be done purely through black-box testing. Some exceptions to this will be handled through the "Search()" method that will be implemented within the GroceryItem sub-menu, which will be handled with white-box testing. The majority of black-box tests will be handled manually as opposed to the white-box counterparts.
 
@@ -49,7 +49,7 @@ Tools:
 
 ## 2 Test Cases
 
-### Test Cases v1.3
+### Test Cases v1.4
 [tests]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/designPNG/TestMatrix.png
 Each test case has a unique test case ID denoted by TCID followed by a step-by-step procedure denoted by SID, corresponding to its TCID. Test cases that are marked in red are test cases that have failed at the current version of the app; test cases that are bolded and blue are test cases that have newly passed with the current version of the app.
 ![alt text][tests]
