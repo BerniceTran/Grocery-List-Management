@@ -23,11 +23,15 @@ public class GroceryItems extends AppCompatActivity {
 
 
     ArrayList<String> itemList = null;
-
     ListView itemListView;
 
-
     SQLiteDatabase itemDB;
+
+    String currentList;
+    Integer currentListID;
+    Integer currentItemID;
+    String currentItemName;
+    String currentItemType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +40,13 @@ public class GroceryItems extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //Tests retrieval of list name
+        Log.i("ListClicked",getIntent().getStringExtra("ListName"));
+        currentList = getIntent().getStringExtra("ListName");
+        //Tests retrieval of list position
+        Log.i("PositionClicked", String.valueOf(getIntent().getIntExtra("ListID",0)));
+        currentListID = getIntent().getIntExtra("ListID",0);
 
-
-      //  itemAdapter =new CustomArrayAdapter(this, itemList);
         itemList = new ArrayList<String>();
         itemListView = (ListView) findViewById(R.id.itemList);
 
@@ -72,14 +80,11 @@ public class GroceryItems extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-
         if(id == R.id.createItem){
-
-            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
             final Context cont = this;
 
-            builder.setTitle("Item to be added:");
+            final AlertDialog.Builder builder = new AlertDialog.Builder(cont);
+            builder.setTitle("Search for item:");
             final EditText input = new EditText(cont);
             builder.setView(input);
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -88,14 +93,26 @@ public class GroceryItems extends AppCompatActivity {
                     final String in = input.getText().toString();
                     if(searchItem(in) == true) {
                         itemList.add(in);
+
+
+                        Log.i("Type found:",getItemType(in));
+
                         ListAdapter itemAdapter = new CustomArrayAdapter(getApplicationContext(), itemList);
+
+
+//                        String foundItemName = in;
+//                        String foundItemType = getItemType(in);
+//                        int newQuantity2 = 1;
+//
+//                        itemDB.execSQL("INSERT INTO listItems (ListID, ItemID, ListName, ItemName, ItemType, CheckMark, Quantity) VALUES ('" + currentListID + "', 1, '" + currentList + "', '" + foundItemName + "','" + foundItemType + "', 1, '" + newQuantity2 + "')");
+//
 
                         itemListView.setAdapter(itemAdapter);
                     }
                     else if(searchItem(in) == false) {
                         //creates dialog for the new item being added to the database
-                        AlertDialog.Builder builder1 = new AlertDialog.Builder(cont);
-                        builder1.setTitle("Item not found. Type in the item type: ");
+                        final AlertDialog.Builder builder1 = new AlertDialog.Builder(cont);
+                        builder1.setTitle("Item not found. Input Type.");
                         final EditText input = new EditText(cont);
                         builder1.setView(input);
                         builder1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -157,7 +174,39 @@ public class GroceryItems extends AppCompatActivity {
         while(c.moveToNext());
         Log.i("Searchtest","DidNotFindit");
         c.close();
+
+
         return false;
+    }
+
+    /*
+    private String getItemType(String input){
+        Cursor c = itemDB.rawQuery("SELECT * FROM items", null);
+        int typeIndex = c.getColumnIndex("itemType");
+        c.moveToFirst();
+
+
+        return null;
+    }
+    */
+    public String getItemType(String input) {
+
+        Cursor c = itemDB.rawQuery("SELECT * FROM items WHERE itemName = input", null); //totally lost here
+        int typeIndex = c.getColumnIndex("itemType");
+        c.moveToFirst();
+
+        do {
+            String comparisonName = c.getString(typeIndex);
+            if(input.equals(comparisonName)) {
+                Log.i("ItemType", comparisonName);
+                return comparisonName;
+            }
+        }
+        while(c.moveToNext());
+        Log.i("ItemType","DidNotFindit");
+        c.close();
+
+        return null;
     }
 
 
