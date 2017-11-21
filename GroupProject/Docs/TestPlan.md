@@ -49,7 +49,7 @@ Tools:
 
 ## 2 Test Cases
 
-### Test Cases v1.2
+### Test Cases v1.3
 [tests]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/designPNG/TestMatrix.png
-Each test case has a unique test case ID denoted by TCID followed by a step-by-step procedure denoted by SID, corresponding to its TCID.
+Each test case has a unique test case ID denoted by TCID followed by a step-by-step procedure denoted by SID, corresponding to its TCID. Test cases that are marked in red are test cases that have failed at the current version of the app; test cases that are bolded and blue are test cases that have newly passed with the current version of the app.
 ![alt text][tests]
