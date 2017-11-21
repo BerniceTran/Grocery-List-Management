@@ -1,5 +1,6 @@
 package glm.seclass.qc.edu.grocerylistmanagement;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -75,11 +76,9 @@ public class GroceryItems extends AppCompatActivity {
         if(id == R.id.createItem){
 
             final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            final AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
 
             final Context cont = this;
 
-            AlertDialog.Builder builder = new AlertDialog.Builder(cont);
             builder.setTitle("Search for item:");
             final EditText input = new EditText(cont);
             builder.setView(input);
