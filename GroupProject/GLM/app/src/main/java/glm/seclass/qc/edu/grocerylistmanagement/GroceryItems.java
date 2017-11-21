@@ -74,16 +74,21 @@ public class GroceryItems extends AppCompatActivity {
 
         if(id == R.id.createItem){
 
+<<<<<<< HEAD
             final AlertDialog.Builder builder = new AlertDialog.Builder(this);
             final AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
+=======
+            final Context cont = this;
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(cont);
+>>>>>>> 2bd28b8cbe52af31d9d9a25d9c8a4a477b753a92
             builder.setTitle("Search for item:");
-            final EditText input = new EditText(this);
+            final EditText input = new EditText(cont);
             builder.setView(input);
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     final String in = input.getText().toString();
-
                     if(searchItem(in) == true) {
                         itemList.add(in);
                         ListAdapter itemAdapter = new CustomArrayAdapter(getApplicationContext(), itemList);
@@ -92,15 +97,17 @@ public class GroceryItems extends AppCompatActivity {
                     }
                     else if(searchItem(in) == false) {
                         //creates dialog for the new item being added to the database
-                        builder.setTitle("Item not found. Input Type.");
-                        builder.setView(input);
-                        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        AlertDialog.Builder builder1 = new AlertDialog.Builder(cont);
+                        builder1.setTitle("Item not found. Input Type.");
+                        final EditText input = new EditText(cont);
+                        builder1.setView(input);
+                        builder1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
 
                                 String newItemName = in;
                                 String newItemCategory = input.getText().toString();
-                                itemDB.execSQL("INSERT INTO items (itemName, itemType, price) VALUES ('" + newItemName + "','" + newItemCategory + "')");
+                                itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('" + newItemName + "','" + newItemCategory + "')");
 
                                 //Adding the new item to the list
                                 itemList.add(newItemName);
@@ -109,13 +116,13 @@ public class GroceryItems extends AppCompatActivity {
                                 itemListView.setAdapter(itemAdapter);
                             }
                         });
-                        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        builder1.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int which) {
                                 dialogInterface.cancel();
                             }
                         }); //end type dialog
-                        builder.show();
+                        builder1.show();
                     }
                 }
             });
@@ -127,7 +134,6 @@ public class GroceryItems extends AppCompatActivity {
             });
 
             builder.show();
-
             return true;
         }
 //
@@ -156,5 +162,7 @@ public class GroceryItems extends AppCompatActivity {
         c.close();
         return false;
     }
+
+
 
 }
