@@ -1,35 +1,21 @@
 package glm.seclass.qc.edu.grocerylistmanagement;
 
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteStatement;
-
 import android.content.Context;
 import android.content.DialogInterface;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.preference.EditTextPreference;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.CheckBox;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.NumberPicker;
-import android.widget.TextView;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-import android.util.Log;
 
 
 
@@ -89,10 +75,11 @@ public class GroceryItems extends AppCompatActivity {
 
         if(id == R.id.createItem){
 
+            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
             final Context cont = this;
 
-            AlertDialog.Builder builder = new AlertDialog.Builder(cont);
-            builder.setTitle("Search for item:");
+            builder.setTitle("Item to be added:");
             final EditText input = new EditText(cont);
             builder.setView(input);
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -108,12 +95,13 @@ public class GroceryItems extends AppCompatActivity {
                     else if(searchItem(in) == false) {
                         //creates dialog for the new item being added to the database
                         AlertDialog.Builder builder1 = new AlertDialog.Builder(cont);
-                        builder1.setTitle("Item not found. Input Type.");
+                        builder1.setTitle("Item not found. Type in the item type: ");
                         final EditText input = new EditText(cont);
                         builder1.setView(input);
                         builder1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
+
                                 String newItemName = in;
                                 String newItemCategory = input.getText().toString();
                                 itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('" + newItemName + "','" + newItemCategory + "')");
@@ -141,9 +129,16 @@ public class GroceryItems extends AppCompatActivity {
                     dialog.cancel();
                 }
             });
+
             builder.show();
             return true;
         }
+
+        if(id == R.id.deleteItem){
+
+
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
