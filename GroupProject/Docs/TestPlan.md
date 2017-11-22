@@ -1,3 +1,5 @@
+[tests]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/designPNG/TestMatrix.png
+[excel-spreadsheet]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/diagramPDF/testCaseSpreadsheet.xlsx
 # Test Plan
 
 **Author(s)**: Bernice Tran, Nazib Mondal
@@ -35,7 +37,7 @@ User interface testing will be done to ensure that our application meets its fun
 
 As we are using a human tester to test the functional aspects, we will also use a human tester to report bugs. We will capture bug reports directly from a device by using either **Take a bug report** developer option on the device, or through the Android Emulator menu. These bug reports contain device logs, stack traces, and other diagnostic information to help find and fix bugs.
 
-### 1.5 Technology v1.2
+### 1.5 Technology v1.5
 
 Tools:  
 - Android SDK  
@@ -45,11 +47,16 @@ Tools:
 - Automation tool: Espresso (works with AndroidJUnitTestRunner)  
 - Functional testing: We will use a human tester and Espresso testing framework, provided by Android Testing Support Library, to simulate user interactions  
 - System testing: Android Virtual Device (AVD) manager in Android Studio where various emulated/virtual devices that mimic a wide range of device types and configurations can be used to test the app  
-- UI testing will be handled manually through the usage of a human tester
+- UI testing will be handled manually through the usage of a human tester, and the tests will be cataloged via Test Matrix ([excel-spreadsheet])
 
 ## 2 Test Cases
 
-### Test Cases v1.4
-[tests]: https://github.com/qc-se-fall2017/370Fall17Team6/blob/master/GroupProject/Docs/designPNG/TestMatrix.png
-Each test case has a unique test case ID denoted by TCID followed by a step-by-step procedure denoted by SID, corresponding to its TCID. Test cases that are marked in red are test cases that have failed at the current version of the app; test cases that are bolded and blue are test cases that have newly passed with the current version of the app.
+### Test Cases v1.5
+
+Each test case has a unique test case ID denoted by TCID followed by a step-by-step procedure denoted by SID, corresponding to its TCID. The test cases can be read as follows:
+
+- Test cases that are bolded and blue are test cases that have newly passed with the current version of the app
+- Test cases that are marked in red are test cases that have persistently failed up to the current version of the app
+- Test cases that are marked in red, bolded, and italicized, are NEWLY failed test cases (that previously passed) in the current version of the app
+
 ![alt text][tests]
