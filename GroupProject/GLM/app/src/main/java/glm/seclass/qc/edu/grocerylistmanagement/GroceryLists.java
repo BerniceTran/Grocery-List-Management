@@ -1,28 +1,28 @@
 package glm.seclass.qc.edu.grocerylistmanagement;
 
-        import android.content.ContentValues;
-        import android.database.Cursor;
-        import android.database.sqlite.SQLiteDatabase;
-        import android.database.sqlite.SQLiteStatement;
+import android.content.ContentValues;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteStatement;
 
-        import android.content.DialogInterface;
-        import android.content.Intent;
-        import android.os.Bundle;
-        import android.support.v7.app.AlertDialog;
-        import android.support.v7.app.AppCompatActivity;
-        import android.support.v7.widget.Toolbar;
-        import android.util.Log;
-        import android.view.ContextMenu;
-        import android.view.Menu;
-        import android.view.MenuItem;
-        import android.view.View;
-        import android.widget.AdapterView;
-        import android.widget.ArrayAdapter;
-        import android.widget.EditText;
-        import android.widget.ListView;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.ContextMenu;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ListView;
 
-        import java.util.ArrayList;
-        import java.util.Collections;
+import java.util.ArrayList;
+import java.util.Collections;
 
 
 public class GroceryLists extends AppCompatActivity {
@@ -50,10 +50,11 @@ public class GroceryLists extends AppCompatActivity {
         //placeholder - once we have a login screen, we can make this more official
         listDB.execSQL("INSERT INTO customers (firstName, lastName, email, password) VALUES ('John','Smith','johnsmith@gmail.com','John1234')");
 
-     /*   listDB.execSQL("INSERT INTO lists (listName) VALUES ('ChristmasList')");
+        /*
+        listDB.execSQL("INSERT INTO lists (listName) VALUES ('ChristmasList')");
         listDB.execSQL("INSERT INTO lists (listName) VALUES ('EasterList')");
         listDB.execSQL("INSERT INTO lists (listName) VALUES ('ThanksgivingList')");
-*/
+        */
         groceryList = new ArrayList<>();
         groceryListAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, groceryList);
 
@@ -62,7 +63,6 @@ public class GroceryLists extends AppCompatActivity {
         Cursor c = listDB.rawQuery("SELECT * FROM lists",null);
         int nameIndex = c.getColumnIndex("listName");
         c.moveToFirst();
-
         if(c.moveToFirst()) {
             do {
                 String savedLists = c.getString(nameIndex);
@@ -70,13 +70,12 @@ public class GroceryLists extends AppCompatActivity {
             }
             while (c.moveToNext());
         }
-
         c.close();
 
 
         lv = (ListView) findViewById(R.id.groceryList);
         lv.setAdapter(groceryListAdapter);
- //       String listName = groceryListAdapter.getItem(pos);
+        //       String listName = groceryListAdapter.getItem(pos);
         //Access to grocery list contents
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -245,6 +244,4 @@ public class GroceryLists extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-
 }
