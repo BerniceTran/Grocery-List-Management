@@ -100,13 +100,11 @@ public class GroceryItems extends AppCompatActivity {
                         ListAdapter itemAdapter = new CustomArrayAdapter(getApplicationContext(), itemList);
 
 
-//                        String foundItemName = in;
-//                        String foundItemType = getItemType(in);
-//                        int newQuantity2 = 1;
-//
-//                        itemDB.execSQL("INSERT INTO listItems (ListID, ItemID, ListName, ItemName, ItemType, CheckMark, Quantity) VALUES ('" + currentListID + "', 1, '" + currentList + "', '" + foundItemName + "','" + foundItemType + "', 1, '" + newQuantity2 + "')");
-//
+                        String foundItemName = in;
+                        String foundItemType = getItemType(in);
+                        int newQuantity2 = 1;
 
+                        itemDB.execSQL("INSERT INTO listItems (ListID, ItemID, ListName, ItemName, ItemType, CheckMark, Quantity) VALUES ('" + currentListID + "', 1, '" + currentList + "', '" + foundItemName + "','" + foundItemType + "', 1, '" + newQuantity2 + "')");
                         itemListView.setAdapter(itemAdapter);
                     }
                     else if(searchItem(in) == false) {
@@ -121,11 +119,15 @@ public class GroceryItems extends AppCompatActivity {
 
                                 String newItemName = in;
                                 String newItemCategory = input.getText().toString();
+                                //Adding new Item to Grocery Store DB
                                 itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('" + newItemName + "','" + newItemCategory + "')");
 
                                 //Adding the new item to the list
                                 itemList.add(newItemName);
                                 ListAdapter itemAdapter = new CustomArrayAdapter(getApplicationContext(), itemList);
+                                //Adding the new item to list DB
+                                int newQuantity2 = 1;
+                                itemDB.execSQL("INSERT INTO listItems (ListID, ItemID, ListName, ItemName, ItemType, CheckMark, Quantity) VALUES ('" + currentListID + "', 1, '" + currentList + "', '" + newItemName + "','" + newItemCategory+ "', 1, '" + newQuantity2 + "')");
 
                                 itemListView.setAdapter(itemAdapter);
                             }
@@ -150,7 +152,6 @@ public class GroceryItems extends AppCompatActivity {
             builder.show();
             return true;
         }
-
         if(id == R.id.deleteItem){
 
 
@@ -178,37 +179,22 @@ public class GroceryItems extends AppCompatActivity {
 
         return false;
     }
-
-    /*
-    private String getItemType(String input){
+    public String getItemType(String input) {
         Cursor c = itemDB.rawQuery("SELECT * FROM items", null);
         int typeIndex = c.getColumnIndex("itemType");
+        int nameIndex = c.getColumnIndex("itemName");
         c.moveToFirst();
-
-
-        return null;
-    }
-    */
-    public String getItemType(String input) {
-
-        Cursor c = itemDB.rawQuery("SELECT * FROM items WHERE itemName = input", null); //totally lost here
-        int typeIndex = c.getColumnIndex("itemType");
-        c.moveToFirst();
-
         do {
-            String comparisonName = c.getString(typeIndex);
+            String comparisonName = c.getString(nameIndex);
             if(input.equals(comparisonName)) {
-                Log.i("ItemType", comparisonName);
-                return comparisonName;
+                Log.i("ItemTypeMatch", comparisonName);
+                Log.i("ReturnedType", c.getString(typeIndex));
+                return c.getString(typeIndex);
             }
         }
         while(c.moveToNext());
         Log.i("ItemType","DidNotFindit");
         c.close();
-
         return null;
     }
-
-
-
 }
