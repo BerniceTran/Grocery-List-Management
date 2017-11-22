@@ -82,9 +82,9 @@ public class GroceryItems extends AppCompatActivity {
                     displayList.add(c.getString(nameIndex));
                 }
                 String savedLists = c.getString(nameIndex);
-                itemList.add(savedLists);
+                displayList.add(savedLists);
             }
-            while (c.moveToNext());
+            while(c.moveToNext());
         }
         c.close();
 
