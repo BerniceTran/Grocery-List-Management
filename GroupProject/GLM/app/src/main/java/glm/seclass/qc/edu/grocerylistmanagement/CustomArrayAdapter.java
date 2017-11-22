@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-
  public class CustomArrayAdapter extends ArrayAdapter<String>{
 
     public CustomArrayAdapter(Context context, ArrayList itemList)
@@ -20,7 +19,6 @@ import java.util.ArrayList;
         super(context, R.layout.item_row, itemList);
         System.out.print(itemList);
     }
-
     public View getView(int position, View convertView, ViewGroup parent){
         LayoutInflater myInflater = LayoutInflater.from(getContext());
 

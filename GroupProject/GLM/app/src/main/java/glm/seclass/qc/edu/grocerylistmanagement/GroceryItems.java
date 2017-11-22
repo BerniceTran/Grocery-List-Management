@@ -11,8 +11,8 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.util.SparseBooleanArray;
 
@@ -21,10 +21,11 @@ import java.util.ArrayList;
 
 
 public class GroceryItems extends AppCompatActivity {
-
-
+//
     ArrayList<String> itemList = new ArrayList<String>();
     ArrayList<String> displayList = new ArrayList<String>();
+
+    ArrayAdapter<String> itemAdapter;
 
     ListView itemListView;
 
@@ -47,6 +48,7 @@ public class GroceryItems extends AppCompatActivity {
         //Tests retrieval of list name
         Log.i("ListClicked",getIntent().getStringExtra("ListName"));
         currentList = getIntent().getStringExtra("ListName");
+
         //Tests retrieval of list position
         Log.i("PositionClicked", String.valueOf(getIntent().getIntExtra("ListID",0)));
         currentListID = getIntent().getIntExtra("ListID",0);
@@ -67,29 +69,30 @@ public class GroceryItems extends AppCompatActivity {
         itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('chicken wing','meat')");
 
         displayList = new ArrayList<String>();
-        ListAdapter itemAdapter = new CustomArrayAdapter(getApplicationContext(), itemList);
+        ArrayAdapter<String> itemAdapter = new CustomArrayAdapter(getApplicationContext(), itemList);
 
-        Cursor c = itemDB.rawQuery("SELECT * FROM listItems",null);
-        int nameIndex = c.getColumnIndex("ItemName");
-        int listNameIndex = c.getColumnIndex("ListName");
-        c.moveToFirst();
-        if(c.moveToFirst()) {
-            do {
-                String comparisonName = c.getString(listNameIndex);
-                if(currentList.equals(comparisonName)) {
-                    Log.i("ItemNameMatch", comparisonName);
-                    Log.i("ReturnedName", c.getString(nameIndex));
-                    displayList.add(c.getString(nameIndex));
-                }
-                String savedLists = c.getString(nameIndex);
-                displayList.add(savedLists);
-            }
-            while(c.moveToNext());
-        }
-        c.close();
+//        Cursor c = itemDB.rawQuery("SELECT * FROM listItems",null);
+//        int nameIndex = c.getColumnIndex("ItemName");
+//        int listNameIndex = c.getColumnIndex("ListName");
+//        c.moveToFirst();
+//
+//        if(c.moveToFirst()) {
+//            do {
+//                String comparisonName = c.getString(listNameIndex);
+//                if(currentList.equals(comparisonName)) {
+//                    Log.i("ItemNameMatch", comparisonName);
+//                    Log.i("ReturnedName", c.getString(nameIndex));
+//                    displayList.add(c.getString(nameIndex));
+//                }
+//                String savedLists = c.getString(nameIndex);
+//                displayList.add(savedLists);
+//            }
+//            while(c.moveToNext());
+//        }
+//        c.close();
 
         itemListView = (ListView) findViewById(R.id.itemList);
-        itemListView.setAdapter(itemAdapter);
+//      itemListView.setAdapter(itemAdapter);
     }
 
     @Override
@@ -98,7 +101,6 @@ public class GroceryItems extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_grocery_items, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -123,7 +125,7 @@ public class GroceryItems extends AppCompatActivity {
                         //case of item that already exists in item database being added to grocery list
                         Log.i("Type found:",getItemType(in));
 
-                        ListAdapter itemAdapter = new CustomArrayAdapter(getApplicationContext(), itemList);
+                        ArrayAdapter itemAdapter = new CustomArrayAdapter(getApplicationContext(), itemList);
 
                         int newQuantity2 = 1;
                         String foundItemName = in;
@@ -132,7 +134,8 @@ public class GroceryItems extends AppCompatActivity {
                         itemDB.execSQL("INSERT INTO listItems (ListID, ItemID, ListName, ItemName, ItemType, CheckMark, Quantity) VALUES ('" + currentListID + "', '" + foundItemID + "', '" + currentList + "', '" + foundItemName + "','" + foundItemType + "', 1, '" + newQuantity2 + "')");
 
                         itemListView.setAdapter(itemAdapter);
-                        //itemAdapter.notify();
+                        itemAdapter.notifyDataSetChanged();
+
                         //checking to see if item successfully made it to listitem
                         getTableAsString(itemDB, "listItems");
                     }
@@ -155,7 +158,7 @@ public class GroceryItems extends AppCompatActivity {
 
                                 //Adding the new item to the list
                                 itemList.add(newItemName);
-                                ListAdapter itemAdapter = new CustomArrayAdapter(getApplicationContext(), itemList);
+                                ArrayAdapter itemAdapter = new CustomArrayAdapter(getApplicationContext(), itemList);
 
                                 itemListView.setAdapter(itemAdapter);
                                 getTableAsString(itemDB, "items");
@@ -177,40 +180,38 @@ public class GroceryItems extends AppCompatActivity {
                     dialog.cancel();
                 }
             });
-
             builder.show();
             return true;
         }
-//        if(id == R.id.deleteItem){
-//         /*  final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//            builder.setTitle("Delete selected items?");
-//            builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
-//                @Override
-//                public void onClick(DialogInterface dialog, int which) {
-//
-//                    SparseBooleanArray checkedItem = itemListView.getCheckedItemPositions();
-//                    int itemCount = itemListView.getCount();
-//                    for(int i=itemCount-1; i >= 0; i--){
-//                        if(checkedItem.get(i)){
-//                            adapter.remove(itemList.get(i));
-//                        }
-//                    }
-//                    checkedItem.clear();
-//                    adapter.notifyDataSetChanged();
-//                }
-//
-//            });
-//            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-//                @Override
-//                public void onClick(DialogInterface dialog, int which) {
-//                    dialog.cancel();
-//                }
-//            });
-//            builder.show();
-//            return true;
-//        }*/
-//    }
 
+        //If user chooses to delete all the item that are checked
+       if(id == R.id.deleteItem){
+            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Delete selected items?");
+            builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                    SparseBooleanArray checkedItem = itemListView.getCheckedItemPositions();
+                    int itemCount = itemListView.getCount();
+
+                    for(int i=itemCount-1; i >= 0; i--)
+                        if(checkedItem.get(i))
+                            itemAdapter.remove(itemList.get(i));
+
+                    checkedItem.clear();
+                    itemAdapter.notifyDataSetChanged();
+                }
+            });
+            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+            builder.show();
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 

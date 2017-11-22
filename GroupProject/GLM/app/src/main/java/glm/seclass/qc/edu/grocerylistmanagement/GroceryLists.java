@@ -106,27 +106,28 @@ public class GroceryLists extends AppCompatActivity {
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         int selectedItemId = item.getItemId();
-
         //Access to the list view
         switch(selectedItemId) {
             case R.id.deleteList:
                 String nameToDelete = groceryListAdapter.getItem(pos);
+
                 //remove
                 groceryListAdapter.remove(groceryList.get(pos));
                 listDB.execSQL("DELETE FROM lists where lists.listName = '"+ nameToDelete +"'  ");
 
-                //refresh
+                //Refresh
                 groceryListAdapter.notifyDataSetChanged();
-
-                //checking to see if record deleted
+                //Checking to see if record deleted
                 Cursor c = listDB.rawQuery("SELECT * FROM lists",null);
                 int nameIndex = c.getColumnIndex("listName");
                 c.moveToFirst();
-                do {
-                    String savedLists = c.getString(nameIndex);
-                    Log.i("deleteListCheck",savedLists);
+                if(c.moveToFirst()) {
+                    do {
+                        String savedLists = c.getString(nameIndex);
+                        Log.i("deleteListCheck", savedLists);
+                    }
+                    while (c.moveToNext());
                 }
-                while(c.moveToNext());
                 groceryListAdapter.notifyDataSetChanged();
 
                 closeContextMenu();
@@ -167,12 +168,11 @@ public class GroceryLists extends AppCompatActivity {
 
                         groceryList.set(integerID, example);
                     }
-
                 });
                 builder.show();
                 groceryListAdapter.notifyDataSetChanged();
 
-                //checking to see if record renamed
+                //Chhecking to see if record renamed
                 Cursor d = listDB.rawQuery("SELECT * FROM lists",null);
                 int nameIndex2 = d.getColumnIndex("listName");
                 int listprimary = d.getColumnIndex("ListID");
@@ -188,7 +188,6 @@ public class GroceryLists extends AppCompatActivity {
                 closeContextMenu();
                 break;
         }
-
         closeOptionsMenu();
         return super.onContextItemSelected(item);
     }
