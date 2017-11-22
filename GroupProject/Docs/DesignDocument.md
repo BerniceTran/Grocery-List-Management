@@ -8,10 +8,10 @@
 
 **Author(s)**: **Team 6**
 
-* *Nazib Mondal*
-* *Ricardo Delahoz*
-* *Bernice Tran*
-* *Jooyong "Daniel" Park*
+- *Nazib Mondal*
+- *Ricardo Delahoz*
+- *Bernice Tran*
+- *Jooyong "Daniel" Park*
 
 ## 1 Design Considerations
 
@@ -48,20 +48,22 @@ assuming that these dependencies are resolvable and should not hinder the implem
 
 ## 2 Architectural Design
 
-### 2.1 Component Diagram v1.2
+### 2.1 Component Diagram v1.5
 ![alt text][components]
 
-**The 4 main components that will be working together in this design are:**
+**The 5 main components that will be working together in this design are:**
 
  1. The User component
  2. The Grocery List component
- 3. The Database component
- 4. The Items component.
+ 3. The List Database component
+ 4. The Items component
+ 5. The Items Database component
 
-* During actual usage of the app, the main interactions are between the Customer and the Grocery List UI (whereby the Customer can create lists of their choice), and the GroceryDB searching for the existence of an Item that is being added in the GroceryList.
-* The adding of an item is also done by the Customer through the use of the GroceryList UI, however the GroceryList always references the database behind the scenes with every request to search for an add-able item.
-* The user can also add items to the DB in the case an item does not existing.
-* Each individual list will have access to a local centralized GroceryDB, but will have their own tables to handle Item quantities
+* During actual usage of the app, the main interactions are between the Customer and the Grocery List UI (whereby the Customer can create lists of their choice from the main menu), and the Items Database being searched for addable items to be added to the grocery list.
+* The adding of an item is also done by the Customer through the use of the Grocery List UI, however the Grocery List always references the List Database behind the scenes for data persistence, and the Items Database with every request to search for an add-able item.
+* The user can also add Items to the Items Database in the case an Item does not exist.
+* Each individual Grocery List be stored on the List Database, and will have access to a local centralized Items Database, but will have their own tables to handle Item quantities and persistence.
+* The primary use for the List Database component is to help with data persistence; the Items Database component falls under a similar category, but is to keep track of all available Items that can be added to a list. This includes any newly added Items that were not initially available.
 
 ### 2.2 Deployment Diagram v1.2
 
