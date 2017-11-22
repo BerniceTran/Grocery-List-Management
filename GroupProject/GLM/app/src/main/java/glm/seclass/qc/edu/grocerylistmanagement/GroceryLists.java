@@ -46,18 +46,13 @@ public class GroceryLists extends AppCompatActivity {
         listDB.execSQL("CREATE TABLE IF NOT EXISTS customerLists (CustomerListID INTEGER PRIMARY KEY AUTOINCREMENT, listID INTEGER, CustomerID INTEGER)");
         //listDB.execSQL("DELETE FROM CustomerLists");
 
-
-        //placeholder - once we have a login screen, we can make this more official
-        listDB.execSQL("INSERT INTO customers (firstName, lastName, email, password) VALUES ('John','Smith','johnsmith@gmail.com','John1234')");
-
         /*
         listDB.execSQL("INSERT INTO lists (listName) VALUES ('ChristmasList')");
         listDB.execSQL("INSERT INTO lists (listName) VALUES ('EasterList')");
         listDB.execSQL("INSERT INTO lists (listName) VALUES ('ThanksgivingList')");
         */
-        groceryList = new ArrayList<>();
+        groceryList = new ArrayList<String>();
         groceryListAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, groceryList);
-
 
         //code to populate groceryList ArrayList with values from the list database
         Cursor c = listDB.rawQuery("SELECT * FROM lists",null);
@@ -71,7 +66,6 @@ public class GroceryLists extends AppCompatActivity {
             while (c.moveToNext());
         }
         c.close();
-
 
         lv = (ListView) findViewById(R.id.groceryList);
         lv.setAdapter(groceryListAdapter);
@@ -88,8 +82,6 @@ public class GroceryLists extends AppCompatActivity {
                 startActivity(appInfo);
             }
         });
-
-
 
         lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override

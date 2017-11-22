@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.util.SparseBooleanArray;
 
 import java.util.ArrayList;
 
@@ -22,7 +23,9 @@ import java.util.ArrayList;
 public class GroceryItems extends AppCompatActivity {
 
 
-    ArrayList<String> itemList = null;
+    ArrayList<String> itemList = new ArrayList<String>();
+    ArrayList<String> displayList = new ArrayList<String>();
+
     ListView itemListView;
 
     SQLiteDatabase itemDB;
@@ -32,6 +35,7 @@ public class GroceryItems extends AppCompatActivity {
     Integer currentItemID;
     String currentItemName;
     String currentItemType;
+    int defualtQuantity = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,12 +51,9 @@ public class GroceryItems extends AppCompatActivity {
         Log.i("PositionClicked", String.valueOf(getIntent().getIntExtra("ListID",0)));
         currentListID = getIntent().getIntExtra("ListID",0);
 
-        itemList = new ArrayList<String>();
-        itemListView = (ListView) findViewById(R.id.itemList);
-
         itemDB = this.openOrCreateDatabase("Items",MODE_PRIVATE,null);
         itemDB.execSQL("CREATE TABLE IF NOT EXISTS items (ItemID INTEGER PRIMARY KEY, itemName VARCHAR, itemType VARCHAR)");
-        itemDB.execSQL("CREATE TABLE IF NOT EXISTS listItems (ListItemID INTEGER PRIMARY KEY, ListID INTEGER, ItemID INTEGER, Quantity INTEGER)");
+        itemDB.execSQL("CREATE TABLE IF NOT EXISTS listItems (ListItemID INTEGER PRIMARY KEY, ListID INTEGER, ItemID INTEGER, ListName VARCHAR, ItemName VARCHAR, ItemType VARCHAR, CheckMark INTEGER, Quantity INTEGER)");
 
         itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('apple','fruit')");
         itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('orange','fruit')");
@@ -64,6 +65,31 @@ public class GroceryItems extends AppCompatActivity {
         itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('prime rib','meat')");
         itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('ground beef','meat')");
         itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('chicken wing','meat')");
+
+        displayList = new ArrayList<String>();
+        ListAdapter itemAdapter = new CustomArrayAdapter(getApplicationContext(), itemList);
+
+        Cursor c = itemDB.rawQuery("SELECT * FROM listItems",null);
+        int nameIndex = c.getColumnIndex("ItemName");
+        int listNameIndex = c.getColumnIndex("ListName");
+        c.moveToFirst();
+        if(c.moveToFirst()) {
+            do {
+                String comparisonName = c.getString(listNameIndex);
+                if(currentList.equals(comparisonName)) {
+                    Log.i("ItemNameMatch", comparisonName);
+                    Log.i("ReturnedName", c.getString(nameIndex));
+                    displayList.add(c.getString(nameIndex));
+                }
+                String savedLists = c.getString(nameIndex);
+                itemList.add(savedLists);
+            }
+            while (c.moveToNext());
+        }
+        c.close();
+
+        itemListView = (ListView) findViewById(R.id.itemList);
+        itemListView.setAdapter(itemAdapter);
     }
 
     @Override
@@ -94,18 +120,21 @@ public class GroceryItems extends AppCompatActivity {
                     if(searchItem(in) == true) {
                         itemList.add(in);
 
-
+                        //case of item that already exists in item database being added to grocery list
                         Log.i("Type found:",getItemType(in));
 
                         ListAdapter itemAdapter = new CustomArrayAdapter(getApplicationContext(), itemList);
 
-
+                        int newQuantity2 = 1;
                         String foundItemName = in;
                         String foundItemType = getItemType(in);
-                        int newQuantity2 = 1;
+                        int foundItemID = getItemID(in);
+                        itemDB.execSQL("INSERT INTO listItems (ListID, ItemID, ListName, ItemName, ItemType, CheckMark, Quantity) VALUES ('" + currentListID + "', '" + foundItemID + "', '" + currentList + "', '" + foundItemName + "','" + foundItemType + "', 1, '" + newQuantity2 + "')");
 
-                        itemDB.execSQL("INSERT INTO listItems (ListID, ItemID, ListName, ItemName, ItemType, CheckMark, Quantity) VALUES ('" + currentListID + "', 1, '" + currentList + "', '" + foundItemName + "','" + foundItemType + "', 1, '" + newQuantity2 + "')");
                         itemListView.setAdapter(itemAdapter);
+                        //itemAdapter.notify();
+                        //checking to see if item successfully made it to listitem
+                        getTableAsString(itemDB, "listItems");
                     }
                     else if(searchItem(in) == false) {
                         //creates dialog for the new item being added to the database
@@ -119,17 +148,17 @@ public class GroceryItems extends AppCompatActivity {
 
                                 String newItemName = in;
                                 String newItemCategory = input.getText().toString();
-                                //Adding new Item to Grocery Store DB
                                 itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('" + newItemName + "','" + newItemCategory + "')");
+                                int newestItemID = getItemID(newItemName);
+                                int newQuantity = 1;
+                                itemDB.execSQL("INSERT INTO listItems (ListID, ItemID, ListName, ItemName, ItemType, CheckMark, Quantity) VALUES ('" + currentListID + "', '" + newestItemID + "', '" + currentList + "', '" + newItemName + "','" + newItemCategory + "', 1, '" + defualtQuantity + "')");
 
                                 //Adding the new item to the list
                                 itemList.add(newItemName);
                                 ListAdapter itemAdapter = new CustomArrayAdapter(getApplicationContext(), itemList);
-                                //Adding the new item to list DB
-                                int newQuantity2 = 1;
-                                itemDB.execSQL("INSERT INTO listItems (ListID, ItemID, ListName, ItemName, ItemType, CheckMark, Quantity) VALUES ('" + currentListID + "', 1, '" + currentList + "', '" + newItemName + "','" + newItemCategory+ "', 1, '" + newQuantity2 + "')");
 
                                 itemListView.setAdapter(itemAdapter);
+                                getTableAsString(itemDB, "items");
                             }
                         });
                         builder1.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -152,16 +181,40 @@ public class GroceryItems extends AppCompatActivity {
             builder.show();
             return true;
         }
-        if(id == R.id.deleteItem){
-
-
-        }
+//        if(id == R.id.deleteItem){
+//         /*  final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//            builder.setTitle("Delete selected items?");
+//            builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialog, int which) {
+//
+//                    SparseBooleanArray checkedItem = itemListView.getCheckedItemPositions();
+//                    int itemCount = itemListView.getCount();
+//                    for(int i=itemCount-1; i >= 0; i--){
+//                        if(checkedItem.get(i)){
+//                            adapter.remove(itemList.get(i));
+//                        }
+//                    }
+//                    checkedItem.clear();
+//                    adapter.notifyDataSetChanged();
+//                }
+//
+//            });
+//            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialog, int which) {
+//                    dialog.cancel();
+//                }
+//            });
+//            builder.show();
+//            return true;
+//        }*/
+//    }
 
         return super.onOptionsItemSelected(item);
     }
 
     private boolean searchItem(String input) {
-        boolean match = false;
         Cursor c = itemDB.rawQuery("SELECT * FROM items",null);
         int nameIndex = c.getColumnIndex("itemName");
         c.moveToFirst();
@@ -175,7 +228,6 @@ public class GroceryItems extends AppCompatActivity {
         while(c.moveToNext());
         Log.i("Searchtest","DidNotFindit");
         c.close();
-
 
         return false;
     }
@@ -196,5 +248,41 @@ public class GroceryItems extends AppCompatActivity {
         Log.i("ItemType","DidNotFindit");
         c.close();
         return null;
+    }
+    public int getItemID(String input) {
+        Cursor d = itemDB.rawQuery("SELECT * FROM items", null);
+        int idIndex = d.getColumnIndex("ItemID");
+        int nameIndex = d.getColumnIndex("itemName");
+        d.moveToFirst();
+        do {
+            String comparisonName = d.getString(nameIndex);
+            if(input.equals(comparisonName)) {
+                //Log.i("ItemTypeMatch", comparisonName);
+                //Log.i("ReturnedType", c.getString(typeIndex));
+                return d.getInt(idIndex);
+            }
+        }
+        while(d.moveToNext());
+        Log.i("getItemIDCheck","DidNotFindit");
+        d.close();
+        return 0;
+    }
+    public void getTableAsString(SQLiteDatabase db, String tableName) {
+        Log.d("datacheckup", "getTableAsString called");
+        String tableString = String.format("Table %s:\n", tableName);
+        Cursor allRows  = db.rawQuery("SELECT * FROM " + tableName, null);
+        if (allRows.moveToFirst() ){
+            String[] columnNames = allRows.getColumnNames();
+            do {
+                for (String name: columnNames) {
+                    tableString += String.format("%s: %s\n", name,
+                            allRows.getString(allRows.getColumnIndex(name)));
+                }
+                tableString += "\n";
+
+            } while (allRows.moveToNext());
+        }
+        allRows.close();
+        Log.i("datacheckup",tableString);
     }
 }

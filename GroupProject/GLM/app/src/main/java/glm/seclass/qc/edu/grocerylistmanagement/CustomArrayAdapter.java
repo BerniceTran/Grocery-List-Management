@@ -11,9 +11,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-/**
- * Created by RJ on 11/19/2017.
- */
 
  public class CustomArrayAdapter extends ArrayAdapter<String>{
 
@@ -43,9 +40,5 @@ import java.util.ArrayList;
 
         return customView;
     }
-
-
-
-
 
 }
