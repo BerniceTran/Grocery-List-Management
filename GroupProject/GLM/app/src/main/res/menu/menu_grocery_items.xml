@@ -9,10 +9,4 @@
         android:title="@string/createItem"
         app:showAsAction="ifRoom" />
 
-    <item
-        android:id="@+id/deleteItem"
-        android:icon="@drawable/ic_remove_circle_outline_white_48dp"
-        android:title="Delete Item"
-        app:showAsAction="ifRoom" />
-
 </menu>

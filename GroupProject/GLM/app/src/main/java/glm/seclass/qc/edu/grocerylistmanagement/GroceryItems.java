@@ -74,7 +74,6 @@ public class GroceryItems extends AppCompatActivity {
         itemList.clear();
         itemAdapter = new CustomArrayAdapter(getApplicationContext(), itemList);
 
-
         Cursor c = itemDB.rawQuery("SELECT * FROM listItems", null);
         int itemNameIndex = c.getColumnIndex("ItemName");
         int listNameIndex = c.getColumnIndex("ListName");
@@ -128,8 +127,8 @@ public class GroceryItems extends AppCompatActivity {
                 itemAdapter.remove(it);
                 itemDB.execSQL("DELETE FROM listItems where listItems.ListName = '"+ currentList +"'  AND listItems.ItemName = '"+ nameToDelete +"'");
                 //refresh
-                itemAdapter.notifyDataSetChanged();
-                
+          //    itemAdapter.notifyDataSetChanged();
+
                 closeContextMenu();
                 break;
         }
@@ -239,11 +238,6 @@ public class GroceryItems extends AppCompatActivity {
             builder.show();
             return true;
         }
-
-        //If user chooses to delete all the item that are checked
-        if (id == R.id.deleteItem) {
-
-        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -298,6 +292,7 @@ public class GroceryItems extends AppCompatActivity {
         d.close();
         return 0;
     }
+
     public void removeChecks(View itemsScreen) {
         for(int i=0; i < itemListView.getChildCount(); i++){
             ViewGroup checkmarkitem = (ViewGroup)itemListView.getChildAt(i);
