@@ -6,5 +6,6 @@
     <string name="title_activity_grocery_items">Grocery Items</string>
     <string name="createItem">Create Item</string>
     <string name="deleteItem">Delete Item</string>
+    <string name="uncheckBoxes">Uncheck Boxes</string>
 
 </resources>

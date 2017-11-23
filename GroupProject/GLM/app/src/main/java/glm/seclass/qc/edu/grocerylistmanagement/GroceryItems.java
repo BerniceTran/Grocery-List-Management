@@ -2,7 +2,6 @@ package glm.seclass.qc.edu.grocerylistmanagement;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -10,20 +9,19 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
-import android.view.ViewGroup;
-import android.view.View;
-import android.widget.CheckBox;
+
 import java.util.ArrayList;
-import android.view.ContextMenu;
-import android.view.View.OnLongClickListener;
 
 public class GroceryItems extends AppCompatActivity {
 
@@ -229,6 +227,28 @@ public class GroceryItems extends AppCompatActivity {
                     }
                 }
             });
+            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+            builder.show();
+            return true;
+        }
+
+        if (id == R.id.uncheckBoxes) {
+            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Remove all checks?");
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                    removeChecks(itemListView);
+                }
+
+            });
+
             builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {

@@ -9,4 +9,10 @@
         android:title="@string/createItem"
         app:showAsAction="ifRoom" />
 
+    <item
+        android:id="@+id/uncheckBoxes"
+        android:icon="@drawable/ic_offline_pin_white_48dp"
+        android:title="Uncheck Boxes"
+        app:showAsAction="ifRoom" />
+
 </menu>
