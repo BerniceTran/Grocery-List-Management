@@ -19,8 +19,6 @@ import java.util.ArrayList;
         super(context, R.layout.item_row, itemList);
         System.out.println(itemList);
     }
-
-
     public View getView(int position, View convertView, ViewGroup parent){
         LayoutInflater myInflater = LayoutInflater.from(getContext());
 

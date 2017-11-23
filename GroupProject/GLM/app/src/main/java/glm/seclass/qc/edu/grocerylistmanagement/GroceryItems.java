@@ -2,6 +2,7 @@ package glm.seclass.qc.edu.grocerylistmanagement;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -11,21 +12,24 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.view.ViewGroup;
 import android.view.View;
 import android.widget.CheckBox;
 import java.util.ArrayList;
-
+import android.view.ContextMenu;
+import android.view.View.OnLongClickListener;
 
 public class GroceryItems extends AppCompatActivity {
 
-    ArrayList<Item> itemList = new ArrayList<Item>();
-    ArrayList<String> quantityList = new ArrayList<String>();
-    ArrayAdapter<Item> itemAdapter;
+    private  ArrayList<Item> itemList = new ArrayList<Item>();
+    private ArrayList<String> quantityList = new ArrayList<String>();
+    private ArrayAdapter<Item> itemAdapter = null;
     ListView itemListView;
 
     SQLiteDatabase itemDB;
@@ -33,6 +37,8 @@ public class GroceryItems extends AppCompatActivity {
     String currentList;
     Integer currentListID;
     int defualtQuantity = 1;
+
+    int position;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +72,8 @@ public class GroceryItems extends AppCompatActivity {
 
         itemList = new ArrayList<Item>();
         itemList.clear();
-        ArrayAdapter<Item> itemAdapter = new CustomArrayAdapter(getApplicationContext(), itemList);
+        itemAdapter = new CustomArrayAdapter(getApplicationContext(), itemList);
+
 
         Cursor c = itemDB.rawQuery("SELECT * FROM listItems", null);
         int itemNameIndex = c.getColumnIndex("ItemName");
@@ -86,8 +93,49 @@ public class GroceryItems extends AppCompatActivity {
 
         itemListView = (ListView) findViewById(R.id.itemList);
         itemListView.setAdapter(itemAdapter);
+
+        itemListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                position = i;
+                return false;
+            }
+        });
+
+        this.registerForContextMenu(itemListView);
+
     }
 
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        if(v.getId() == R.id.itemList)
+            this.getMenuInflater().inflate(R.menu.item_context_menu, menu);
+        super.onCreateContextMenu(menu, v, menuInfo);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem i) {
+        int selectedItemId = i.getItemId();
+
+        switch (selectedItemId){
+            case R.id.deleteItem:
+
+                Item it = itemList.get(position);
+                String nameToDelete = it.getItemName();
+
+
+                //remove
+                itemAdapter.remove(it);
+                itemDB.execSQL("DELETE FROM listItems where listItems.ListName = '"+ currentList +"'  AND listItems.ItemName = '"+ nameToDelete +"'");
+                //refresh
+                itemAdapter.notifyDataSetChanged();
+                
+                closeContextMenu();
+                break;
+        }
+        closeContextMenu();
+        return super.onContextItemSelected(i);
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -114,6 +162,16 @@ public class GroceryItems extends AppCompatActivity {
                 public void onClick(DialogInterface dialog, int which) {
                     final String in = input.getText().toString();
 
+                    if(in.indexOf("'") >= 0) {
+                        Toast message = Toast.makeText(cont, "Illegal key entered",Toast.LENGTH_SHORT);
+                        message.show();
+                        return;
+                    }
+                    if(in.indexOf("\\") >= 0) {
+                        Toast message = Toast.makeText(cont, "Illegal key entered",Toast.LENGTH_SHORT);
+                        message.show();
+                        return;
+                    }
                     //dedupping the item UI
                     for (int i = 0; i < itemList.size();i++) {
                         if(in.equals(itemList.get(i).getItemName())) {
@@ -146,7 +204,6 @@ public class GroceryItems extends AppCompatActivity {
                         builder1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-
                                 String newQuantity = "1";
                                 int defCheck = 0;
                                 Item it = new Item(in, newQuantity, defCheck);
@@ -154,9 +211,7 @@ public class GroceryItems extends AppCompatActivity {
                                 String newItemCategory = input.getText().toString();
 
                                 itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('" + it.getItemName() + "','" + newItemCategory + "')");
-
                                 int newestItemID = getItemID(it.getItemName());
-
                                 itemDB.execSQL("INSERT INTO listItems (ListID, ItemID, ListName, ItemName, ItemType, CheckMark, Quantity) VALUES ('" + currentListID + "', '" + newestItemID + "', '" + currentList + "', '" + it.getItemName() + "','" + newItemCategory + "', 1, '" + it.getItemQuantity() + "')");
 
                                 //Adding the new item to the list
@@ -209,7 +264,6 @@ public class GroceryItems extends AppCompatActivity {
 
         return false;
     }
-
     public String getItemType(String input) {
         Cursor c = itemDB.rawQuery("SELECT * FROM items", null);
         int typeIndex = c.getColumnIndex("itemType");
@@ -228,7 +282,6 @@ public class GroceryItems extends AppCompatActivity {
         c.close();
         return null;
     }
-
     public int getItemID(String input) {
         Cursor d = itemDB.rawQuery("SELECT * FROM items", null);
         int idIndex = d.getColumnIndex("ItemID");
@@ -252,5 +305,21 @@ public class GroceryItems extends AppCompatActivity {
             checkbox.setChecked(false);
         }
     }
+
+    /*
+    public void onCheckboxClicked(View view) {
+
+        boolean checked = ((CheckBox) view).isChecked();
+        String name = ((TextView) view).getText().toString();
+
+        CheckBox itemCheck = (CheckBox) findViewById(R.id.checkBox);
+
+        if (itemCheck.isChecked()) {
+            itemDB.execSQL("UPDATE listItems SET CheckMark = '1' WHERE ListName = '" + name + "'");
+        } else {
+            itemDB.execSQL("UPDATE listItems SET CheckMark = '0' WHERE ListName = '" + name + "'");
+        }
+    }
+    */
 
 }

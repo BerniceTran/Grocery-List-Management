@@ -14,22 +14,6 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:id="@+id/frameLayout">
-
-    <!--
-        <EditText
-            android:id="@+id/searchItem"
-            android:layout_width="278dp"
-            android:layout_height="64dp"
-            android:ems="10" />
-
-        <Button
-            android:id="@+id/addButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:text="Add" />
-        -->
-
     </FrameLayout>
 
     <ListView

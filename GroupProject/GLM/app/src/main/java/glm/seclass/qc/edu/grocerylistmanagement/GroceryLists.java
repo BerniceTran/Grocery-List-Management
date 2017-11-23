@@ -77,6 +77,7 @@ public class GroceryLists extends AppCompatActivity {
 
         lv = (ListView) findViewById(R.id.groceryList);
         lv.setAdapter(groceryListAdapter);
+
         //       String listName = groceryListAdapter.getItem(pos);
         //Access to grocery list contents
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -142,10 +143,8 @@ public class GroceryLists extends AppCompatActivity {
                 closeContextMenu();
                 break;
 
-
-
             case R.id.renameList:
-                final Context cont2 = this;
+                final Context cont = this;
                 final String oldName = groceryListAdapter.getItem(pos);
                 Log.i("ListToRename",oldName);
                 //adapter.remove(groceryList.get(pos));
@@ -163,9 +162,20 @@ public class GroceryLists extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         String newListName = input.getText().toString();
+
+                        if(newListName.indexOf("'") >= 0) {
+                            Toast message = Toast.makeText(cont, "Illegal key entered",Toast.LENGTH_SHORT);
+                            message.show();
+                            return;
+                        }
+                        if(newListName.indexOf("\\") >= 0) {
+                            Toast message = Toast.makeText(cont, "Illegal key entered",Toast.LENGTH_SHORT);
+                            message.show();
+                            return;
+                        }
                         for (int i = 0; i < groceryList.size();i++) {
                             if(newListName.equals(groceryList.get(i))) {
-                                Toast message = Toast.makeText(cont2, "That list exists already",Toast.LENGTH_SHORT);
+                                Toast message = Toast.makeText(cont, "That list exists already",Toast.LENGTH_SHORT);
                                 message.show();
                                 return;
                             }
@@ -224,6 +234,17 @@ public class GroceryLists extends AppCompatActivity {
                 public void onClick(DialogInterface dialog, int which) {
 
                     String DBhelper = input.getText().toString();
+
+                    if(DBhelper.indexOf("'") >= 0) {
+                        Toast message = Toast.makeText(cont, "Illegal key entered",Toast.LENGTH_SHORT);
+                        message.show();
+                        return;
+                    }
+                    if(DBhelper.indexOf("\\") >= 0) {
+                        Toast message = Toast.makeText(cont, "Illegal key entered",Toast.LENGTH_SHORT);
+                        message.show();
+                        return;
+                    }
                     for (int i = 0; i < groceryList.size();i++) {
                         if(DBhelper.equals(groceryList.get(i))) {
                             Toast message = Toast.makeText(cont, "That list exists already",Toast.LENGTH_SHORT);
