@@ -57,16 +57,344 @@ public class GroceryItems extends AppCompatActivity {
         itemDB.execSQL("CREATE TABLE IF NOT EXISTS items (ItemID INTEGER PRIMARY KEY, itemName VARCHAR, itemType VARCHAR)");
         itemDB.execSQL("CREATE TABLE IF NOT EXISTS listItems (ListItemID INTEGER PRIMARY KEY, ListID INTEGER, ItemID INTEGER, ListName VARCHAR, ItemName VARCHAR, ItemType VARCHAR, CheckMark INTEGER, Quantity INTEGER)");
 
-        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('apple','fruit')");
-        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('orange','fruit')");
-        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('pear','fruit')");
+        /** SQL Inserts Begin HERE */
+        //fruits
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('apples','fruit')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('oranges','fruit')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('pears','fruit')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('apricots','fruit')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('avocados','fruit')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('bananas','fruit')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('berries','fruit')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('cherries','fruit')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('grapefruit','fruit')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('grapes','fruit')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('kiwi','fruit')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('lemons','fruit')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('limes','fruit')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('melons','fruit')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('nectarines','fruit')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('watermelon','fruit')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('peaches','fruit')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('papaya','fruit')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('plums','fruit')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('pomegranate','fruit')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('blueberries','fruit')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('strawberries','fruit')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('raspberry','fruit')");
+
+        //vegetables
         itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('cucumber','vegetable')");
         itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('lettuce','vegetable')");
         itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('cabbage','vegetable')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('atrichooke','vegetable')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('asparagus','vegetable')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('basil','vegetable')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('beets','vegetable')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('broccoli','vegetable')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('cauliflower','vegetable')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('carrots','vegetable')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('celery','vegetable')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('chilies','vegetable')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('chives','vegetable')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('cilantro','vegetable')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('corn','vegetable')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('eggplant','vegetable')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('garlic','vegetable')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('green onions','vegetable')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('romaine lettuce','vegetable')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('onions','vegetable')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('bell peppers','vegetable')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('peppers','vegetable')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('potatoes','vegetable')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('salad greens','vegetable')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('sprouts','vegetable')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('spinach','vegetable')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('squash','vegetable')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('pumpkin','vegetable')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('tomatoes','vegetable')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('zuucchini','vegetable')");
+
+        //meat
         itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('bacon','meat')");
         itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('prime rib','meat')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('lunchmeat','meat')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('ham','meat')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('turkey','meat')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('pork','meat')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('chicken','meat')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('lamb','meat')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('steak','meat')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('hot dogs','meat')");
         itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('ground beef','meat')");
-        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('chicken wing','meat')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('ground chicken','meat')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('ground turkey','meat')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('ground pork','meat')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('ground beef','meat')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('sausage','meat')");
+
+        //breakfast
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('cereal','breakfast')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('poptarts','breakfast')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('pancake mix','breakfast')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('pancakes','breakfast')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('toaster strudel','breakfast')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('oatmeal','breakfast')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('grits','breakfast')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('pancake syrup','breakfast')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('syrup','breakfast')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('waffles','breakfast')");
+
+        //frozen
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('pizza bites','frozen')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('chicken tenders','frozen')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('desserts','frozen')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('fish sticks','frozen')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('fruit','frozen')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('ice','frozen')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('ice cream','frozen')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('ice pops','frozen')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('popsicles','frozen')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('pie shells','frozen')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('pot pies','frozen')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('fries','frozen')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('pizza','frozen')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('juice','frozen')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('vegetables','frozen')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('burgers','frozen')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('fish','frozen')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('juice','frozen')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('TV dinners','frozen')");
+
+        //dairy
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('butter','dairy')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('cheese','dairy')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('cheddar','dairy')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('cream cheese','dairy')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('cream','dairy')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('mozzarella','dairy')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('eggs','dairy')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('egg whites','dairy')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('feta cheese','dairy')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('half & half','dairy')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('milk','dairy')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('swiss cheese','dairy')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('whipped cream','dairy')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('yogurt','dairy')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('plain yogurt','dairy')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('sour cream','dairy')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('american cheese','dairy')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('provolone','dairy')");
+
+        //snacks
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('candy','snacks')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('cookies','snacks')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('crackers','snacks')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('dried fruit','snacks')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('fruit snacks','snacks')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('gelatin','snacks')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('graham crackers','snacks')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('granola bars','snacks')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('gum','snacks')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('nuts','snacks')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('popcorn','snacks')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('potato chips','snacks')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('tortilla chips','snacks')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('chips','snacks')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('pretzels','snacks')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('pudding','snacks')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('raisins','snacks')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('seeds','snacks')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('beer mix','snacks')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('trail mix','snacks')");
+
+        //seafood
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('catfish','seafood')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('cod','seafood')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('crab','seafood')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('halibut','seafood')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('lobster','seafood')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('oysters','seafood')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('salmon','seafood')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('shrimp','seafood')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('tilapia','seafood')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('tuna','seafood')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('prawn','seafood')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('caviar','seafood')");
+
+        //baking
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('baking powder','baking')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('baking soda','baking')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('bread crumbs','baking')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('cake decor','baking')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('cake mix','baking')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('canned milk','baking')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('chocolate chips','baking')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('cocoa','baking')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('cornmeal','baking')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('cornstarch','baking')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('flour','baking')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('food coloring','baking')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('frosting','baking')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('muffin mix','baking')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('pie crust','baking')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('shortening','baking')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('sugar','baking')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('brown sugar','baking')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('powdered sugar','baking')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('yeast','baking')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('sprinkles','baking')");
+
+        //bakery
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('bagels','bakery')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('bread','bakery')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('donuts','bakery')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('doughnuts','bakery')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('cake','bakery')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('croutons','bakery')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('dinner rolls','bakery')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('hamburger buns','bakery')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('hotdog buns','bakery')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('muffins','bakery')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('pastries','bakery')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('pie','bakery')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('pita bread','bakery')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('corn tortillas','bakery')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('flour tortillas','bakery')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('croissants','bakery')");
+
+        //canned goods
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('applesauce','canned goods')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('baked beans','canned goods')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('black beans','canned goods')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('broth','canned goods')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('bullion cubes','canned goods')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('canned fruit','canned goods')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('canned vegetables','canned goods')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('chili','canned goods')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('creamed corn','canned goods')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('jam','canned goods')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('jelly','canned goods')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('mushrooms','canned goods')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('green olives','canned goods')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('black olives','canned goods')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('pasta sauce','canned goods')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('peanut butter','canned goods')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('pie filling','canned goods')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('pickles','canned goods')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('soup','canned goods')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('clam chowder','canned goods')");
+
+        //Pasta & rice
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('brown rice','pasta & rice')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('burger helper','pasta & rice')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('couscous','pasta & rice')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('elbow macaroni','pasta & rice')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('lasagna','pasta & rice')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('mac & cheese','pasta & rice')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('rigatoni','pasta & rice')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('noodle mix','pasta & rice')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('ramen noodles','pasta & rice')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('rice mix','pasta & rice')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('jasmine rice','pasta & rice')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('white rice','pasta & rice')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('angel hair','pasta & rice')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('spaghetti','pasta & rice')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('fettucine','pasta & rice')");
+
+        //Seasoning
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('bay leaves','seasoning')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('cinnamon','seasoning')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('cloves','seasoning')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('cumin','seasoning')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('curry','seasoning')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('dill','seasoning')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('garlic salt','seasoning')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('garlic powder','seasoning')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('gravy mix','seasoning')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('italian seasoning','seasoning')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('marinade','seasoning')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('oregano','seasoning')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('paprika','seasoning')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('pepper','seasoning')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('poppy seed','seasoning')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('sage','seasoning')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('salt','seasoning')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('vanilla extract','seasoning')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('cayenne','seasoning')");
+
+        //Condiments
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('bbq sauce','condiments')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('catsup','condiments')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('ketchup','condiments')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('cocktail sauce','condiments')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('cooking spray','condiments')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('honey','condiments')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('horseradish','condiments')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('hot sauce','condiments')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('lemon juice','condiments')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('mayonnaise','condiments')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('mustard','condiments')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('olive oil','condiments')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('relish','condiments')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('salad dressing','condiments')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('soy sauce','condiments')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('salsa','condiments')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('teriyaki','condiments')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('vinegar','condiments')");
+
+        //Beverages
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('beer','beverages')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('champagne','beverages')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('club soda','beverages')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('coffee','beverages')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('tea','beverages')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('diet soda','beverages')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('energy drinks','beverages')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('apple juice','beverages')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('orange juice','beverages')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('soda','beverages')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('wine','beverages')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('liquor','beverages')");
+
+        //Paper Products
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('aluminum foil','paper product')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('coffee filters','paper product')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('cups','paper product')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('garbage bags','paper product')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('napkins','paper product')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('paper plates','paper product')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('paper towels','paper product')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('plastic bags','paper product')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('plastic cutlery','paper product')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('plastic wrap','paper product')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('straws','paper product')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('wax paper','paper product')");
+
+        //Personal Care
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('conditioner','personal')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('deoderant','personal')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('lotion','personal')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('bath soap','personal')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('bug repellant','personal')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('cotton swabs','personal')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('dental floss','personal')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('family planning','personal')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('facial tissue','personal')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('feminime products','personal')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('hair spray','personal')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('hand soap','personal')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('lip care','personal')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('makeup','personal')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('mouthwash','personal')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('razors','personal')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('shampoo','personal')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('shaving cream','personal')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('sunscreen','personal')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('toilet tissue','personal')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('toothbrush','personal')");
+        itemDB.execSQL("INSERT INTO items (itemName, itemType) VALUES ('toothpaste','personal')");
+        /** SQL Inserts End Here */
 
         itemList = new ArrayList<Item>();
         itemList.clear();
@@ -317,7 +645,7 @@ public class GroceryItems extends AppCompatActivity {
         for(int i=0; i < itemListView.getChildCount(); i++){
             ViewGroup checkmarkitem = (ViewGroup)itemListView.getChildAt(i);
             CheckBox checkbox = (CheckBox)checkmarkitem.findViewById(R.id.checkBox);
-            checkbox.setChecked(true);
+            checkbox.setChecked(false);
         }
     }
 
