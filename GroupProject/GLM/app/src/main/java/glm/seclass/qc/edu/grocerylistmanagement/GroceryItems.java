@@ -297,7 +297,7 @@ public class GroceryItems extends AppCompatActivity {
         for(int i=0; i < itemListView.getChildCount(); i++){
             ViewGroup checkmarkitem = (ViewGroup)itemListView.getChildAt(i);
             CheckBox checkbox = (CheckBox)checkmarkitem.findViewById(R.id.checkBox);
-            checkbox.setChecked(false);
+            checkbox.setChecked(true);
         }
     }
 
