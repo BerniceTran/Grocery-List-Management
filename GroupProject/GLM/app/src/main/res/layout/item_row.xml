@@ -9,20 +9,28 @@
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="wrap_content"
-        android:layout_height="64dp" />
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/itemName"
-        android:layout_width="wrap_content"
-        android:layout_height="56dp"
+        android:layout_width="244dp"
+        android:layout_height="46dp"
         android:layout_weight="10.81"
         android:text="TextView"
         android:textSize="20sp" />
 
-    <NumberPicker
-        android:id="@+id/quantity"
+    <TextView
+        android:id = "@+id/qty"
         android:layout_width="wrap_content"
-        android:layout_height="86dp"
-        android:layout_weight="1"
-        android:visibility="visible" />
+        android:layout_height="wrap_content"
+        android:text = "Qty: "
+       />
+
+    <EditText
+        android:id="@+id/itemQuantity"
+        android:layout_width="72dp"
+        android:layout_height="wrap_content"
+        android:hint="                    "
+        android:inputType="numberDecimal" />
+
 </LinearLayout>

@@ -6,19 +6,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
-import android.widget.NumberPicker;
+import android.widget.EditText;
 import android.widget.TextView;
+import glm.seclass.qc.edu.grocerylistmanagement.Item;
 
 import java.util.ArrayList;
 
- public class CustomArrayAdapter extends ArrayAdapter<String>{
+ public class CustomArrayAdapter extends ArrayAdapter<Item>{
 
     public CustomArrayAdapter(Context context, ArrayList itemList)
     {
-
         super(context, R.layout.item_row, itemList);
-        System.out.print(itemList);
+        System.out.println(itemList);
     }
+
+
     public View getView(int position, View convertView, ViewGroup parent){
         LayoutInflater myInflater = LayoutInflater.from(getContext());
 
@@ -27,14 +29,15 @@ import java.util.ArrayList;
             customView = myInflater.inflate(R.layout.item_row, parent, false);
         }
 
-        String singleGroceryItem = getItem(position);
+        Item singleGroceryItem = getItem(position);
+
         TextView name = (TextView) customView.findViewById(R.id.itemName);
         CheckBox box = (CheckBox) customView.findViewById(R.id.checkBox);
-        NumberPicker numberPicker = customView.findViewById(R.id.quantity);
-        numberPicker.setMaxValue(999);
-        numberPicker.setMinValue(1);
+        TextView qty = (TextView) customView.findViewById(R.id.qty);
+        EditText itemQuantity = (EditText) customView.findViewById(R.id.itemQuantity);
 
-        name.setText(singleGroceryItem);
+        name.setText(singleGroceryItem.getItemName());
+        itemQuantity.setText(singleGroceryItem.getItemQuantity());
 
         return customView;
     }

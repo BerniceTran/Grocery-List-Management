@@ -1,6 +1,7 @@
 package glm.seclass.qc.edu.grocerylistmanagement;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
@@ -20,6 +21,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -46,18 +48,23 @@ public class GroceryLists extends AppCompatActivity {
         listDB.execSQL("CREATE TABLE IF NOT EXISTS customerLists (CustomerListID INTEGER PRIMARY KEY AUTOINCREMENT, listID INTEGER, CustomerID INTEGER)");
         //listDB.execSQL("DELETE FROM CustomerLists");
 
-        /*
-        listDB.execSQL("INSERT INTO lists (listName) VALUES ('ChristmasList')");
+
+        //placeholder - once we have a login screen, we can make this more official
+        listDB.execSQL("INSERT INTO customers (firstName, lastName, email, password) VALUES ('John','Smith','johnsmith@gmail.com','John1234')");
+
+     /*   listDB.execSQL("INSERT INTO lists (listName) VALUES ('ChristmasList')");
         listDB.execSQL("INSERT INTO lists (listName) VALUES ('EasterList')");
         listDB.execSQL("INSERT INTO lists (listName) VALUES ('ThanksgivingList')");
-        */
-        groceryList = new ArrayList<String>();
+*/
+        groceryList = new ArrayList<>();
         groceryListAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, groceryList);
+
 
         //code to populate groceryList ArrayList with values from the list database
         Cursor c = listDB.rawQuery("SELECT * FROM lists",null);
         int nameIndex = c.getColumnIndex("listName");
         c.moveToFirst();
+
         if(c.moveToFirst()) {
             do {
                 String savedLists = c.getString(nameIndex);
@@ -66,6 +73,7 @@ public class GroceryLists extends AppCompatActivity {
             while (c.moveToNext());
         }
         c.close();
+
 
         lv = (ListView) findViewById(R.id.groceryList);
         lv.setAdapter(groceryListAdapter);
@@ -82,6 +90,7 @@ public class GroceryLists extends AppCompatActivity {
                 startActivity(appInfo);
             }
         });
+
 
         lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
@@ -110,14 +119,14 @@ public class GroceryLists extends AppCompatActivity {
         switch(selectedItemId) {
             case R.id.deleteList:
                 String nameToDelete = groceryListAdapter.getItem(pos);
-
                 //remove
                 groceryListAdapter.remove(groceryList.get(pos));
                 listDB.execSQL("DELETE FROM lists where lists.listName = '"+ nameToDelete +"'  ");
 
-                //Refresh
+                //refresh
                 groceryListAdapter.notifyDataSetChanged();
-                //Checking to see if record deleted
+
+                //checking to see if record deleted
                 Cursor c = listDB.rawQuery("SELECT * FROM lists",null);
                 int nameIndex = c.getColumnIndex("listName");
                 c.moveToFirst();
@@ -134,7 +143,9 @@ public class GroceryLists extends AppCompatActivity {
                 break;
 
 
+
             case R.id.renameList:
+                final Context cont2 = this;
                 final String oldName = groceryListAdapter.getItem(pos);
                 Log.i("ListToRename",oldName);
                 //adapter.remove(groceryList.get(pos));
@@ -151,28 +162,24 @@ public class GroceryLists extends AppCompatActivity {
                 final AlertDialog.Builder ok = builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        //Log.i("NewName",input.getText().toString());
-                        //adapter.insert(input.getText().toString(), pos);
-                        //Collections.sort(groceryList);
-                        //listDB.execSQL("UPDATE lists SET listName = '"+ input.getText().toString() +"' WHERE listName = '"+ oldName +"' ");
-                        //listDB.execSQL("UPDATE lists SET listName = " + input.getText().toString() +  "WHERE listName = " + oldName);
-
-                        String example = input.getText().toString();
-                        listDB.execSQL("UPDATE lists SET listName = ' " + example +" ' WHERE ListID =" +dbPrimaryID);
-
+                        String newListName = input.getText().toString();
+                        for (int i = 0; i < groceryList.size();i++) {
+                            if(newListName.equals(groceryList.get(i))) {
+                                Toast message = Toast.makeText(cont2, "That list exists already",Toast.LENGTH_SHORT);
+                                message.show();
+                                return;
+                            }
+                        }
+                        listDB.execSQL("UPDATE lists SET listName = ' " + newListName +" ' WHERE ListID =" +dbPrimaryID);
                         groceryListAdapter.notifyDataSetChanged();
-                        //ContentValues newValues = new ContentValues();
-                        //newValues.put("listName","turkey");
-                        //listDB.update("lists",newValues, "ListID=1",null);
-                        //listDB.update(lists,newValues,"listName= 'ThanksgivingList'",null);
-
-                        groceryList.set(integerID, example);
+                        groceryList.set(integerID, newListName);
                     }
+
                 });
                 builder.show();
                 groceryListAdapter.notifyDataSetChanged();
 
-                //Chhecking to see if record renamed
+                //checking to see if record renamed
                 Cursor d = listDB.rawQuery("SELECT * FROM lists",null);
                 int nameIndex2 = d.getColumnIndex("listName");
                 int listprimary = d.getColumnIndex("ListID");
@@ -207,6 +214,7 @@ public class GroceryLists extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.createList) {
+            final Context cont = this;
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Create new list:");
             final EditText input = new EditText(this);
@@ -214,7 +222,15 @@ public class GroceryLists extends AppCompatActivity {
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
+
                     String DBhelper = input.getText().toString();
+                    for (int i = 0; i < groceryList.size();i++) {
+                        if(DBhelper.equals(groceryList.get(i))) {
+                            Toast message = Toast.makeText(cont, "That list exists already",Toast.LENGTH_SHORT);
+                            message.show();
+                            return;
+                        }
+                    }
 
                     groceryList.add(DBhelper);
                     Collections.sort(groceryList);
