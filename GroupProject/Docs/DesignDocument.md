@@ -50,7 +50,7 @@ assuming that these dependencies are resolvable and should not hinder the implem
 
 ## 2 Architectural Design
 
-### 2.1 Component Diagram v1.5
+### 2.1 Component Diagram v1.5+
 ![alt text][components]
 
 **The 5 main components that will be working together in this design are:**
@@ -67,14 +67,14 @@ assuming that these dependencies are resolvable and should not hinder the implem
 * Each individual Grocery List be stored on the List Database, and will have access to a local centralized Items Database, but will have their own tables to handle Item quantities and persistence.
 * The primary use for the List Database component is to help with data persistence; the Items Database component falls under a similar category, but is to keep track of all available Items that can be added to a list. This includes any newly added Items that were not initially available.
 
-### 2.2 Deployment Diagram v1.5
+### 2.2 Deployment Diagram v1.5+
 
 For the software being developed and with the current design of the system, a Deployment Diagram is not necessary. All of the components will be deployed on the Android device in question, including the local SQLite database to handle Customer requests and data persistence. The GroceryList will be accessed through the UI of the system, as well as the Customer's information and the Items that can be added to their list. The save states of each, the GroceryList, the corresponding Items in each list and their quantities will be handled via SQLite's local database to aid in data persistence. The available Items themselves will also persist in the Items Database as new Items are added; as such, no diagram should be required with the current status of the system design as it is too simple and revolves around built-in services of the provided mobile OS architecture (android).
 
 ## 3 Low-Level Design
 
 ### 3.1 Class Diagram
-**Current UML Design v1.5**
+**Current UML Design v1.5+**
 
 This is the current UML class diagram for the system to be functional. Any changes will be noted through version number.
 ![alt text][low-level-class]
@@ -85,10 +85,10 @@ This is the current UML class diagram for the system to be functional. Any chang
 This is the initial concept design for our final product. A full explanation of how to use the app's functions can be found [here].
 ![alt text][UI]
 
-**Version 1.2 UI with States**
+**Version 1.6 UI with States**
 
-As of GLM v1.2 this is the UI's current design with its corresponding states - the pdf for this diagram can be found at this [link].
+As of GLM v1.6 (our released product), this is the UI's current design with its corresponding states - the pdf for this diagram can be found at this [link].
 
-*Note - due to scalability issues, it would be best to open the image in a new tab to zoom in.*
+*Note - due to scalability issues, it would be best to open the image in a new tab and zooming in.*
 
 ![alt text][states]
