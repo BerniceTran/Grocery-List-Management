@@ -1,6 +1,6 @@
-#Available Items By Default
+# Available Items By Default
 
-##fruits
+## fruits
 * apples
 * oranges
 * pears
@@ -25,7 +25,7 @@
 * strawberries
 * raspberry
 
-##vegetables
+## vegetables
 * cucumber
 * lettuce
 * cabbage
@@ -57,7 +57,7 @@
 * tomatoes
 * zuucchini
 
-##meat
+## meat
 * bacon
 * prime rib
 * lunchmeat
@@ -75,7 +75,7 @@
 * ground beef
 * sausage
 
-##breakfast
+## breakfast
 * cereal
 * poptarts
 * pancake mix
@@ -87,7 +87,7 @@
 * syrup
 * waffles
 
-##frozen
+## frozen
 * pizza bites
 * chicken tenders
 * desserts
@@ -108,7 +108,7 @@
 * juice
 * TV dinners
 
-##dairy
+## dairy
 * butter
 * cheese
 * cheddar
@@ -128,7 +128,7 @@
 * american cheese
 * provolone
 
-##snacks
+## snacks
 * candy
 * cookies
 * crackers
@@ -150,7 +150,7 @@
 * beer mix
 * trail mix
 
-##seafood
+## seafood
 * catfish
 * cod
 * crab
@@ -164,7 +164,7 @@
 * prawn
 * caviar
 
-##baking
+## baking
 * baking powder
 * baking soda
 * bread crumbs
@@ -187,7 +187,7 @@
 * yeast
 * sprinkles
 
-##bakery
+## bakery
 * bagels
 * bread
 * donuts
@@ -205,7 +205,7 @@
 * flour tortillas
 * croissants
 
-##canned goods
+## canned goods
 * applesauce
 * baked beans
 * black beans
@@ -227,7 +227,7 @@
 * soup
 * clam chowder
 
-##Pasta & rice
+## pasta & rice
 * brown rice
 * burger helper
 * couscous
@@ -244,7 +244,7 @@
 * spaghetti
 * fettucine
 
-##Seasoning
+## seasoning
 * bay leaves
 * cinnamon
 * cloves
@@ -265,7 +265,7 @@
 * vanilla extract
 * cayenne
 
-##Condiments
+## condiments
 * bbq sauce
 * catsup
 * ketchup
@@ -285,7 +285,7 @@
 * teriyaki
 * vinegar
 
-##Beverages
+## beverages
 * beer
 * champagne
 * club soda
@@ -299,7 +299,7 @@
 * wine
 * liquor
 
-##Paper Products
+## paper products
 * aluminum foil
 * coffee filters
 * cups
@@ -313,7 +313,7 @@
 * straws
 * wax paper
 
-##Personal Care
+## personal care
 * conditioner
 * deoderant
 * lotion
